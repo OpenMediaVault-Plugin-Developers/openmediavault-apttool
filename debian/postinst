@@ -1,0 +1,31 @@
+#!/bin/sh
+
+set -e
+
+. /etc/default/openmediavault
+. /usr/share/openmediavault/scripts/helper-functions
+
+case "$1" in
+    configure)
+        SERVICE_XPATH_NAME="apttool"
+        SERVICE_XPATH="/config/services/${SERVICE_XPATH_NAME}"
+
+        if ! omv_config_exists "${SERVICE_XPATH}"; then
+            omv_config_add_node "/config/services" "${SERVICE_XPATH_NAME}"
+            omv_config_add_node "${SERVICE_XPATH}" "packages"
+        fi
+
+        dpkg-trigger update-fixperms
+        dpkg-trigger update-locale
+    ;;
+
+    abort-upgrade|abort-remove|abort-deconfigure)
+    ;;
+
+    *)
+        echo "postinst called with unknown argument" >&2
+        exit 1
+    ;;
+esac
+
+exit 0

@@ -1,0 +1,69 @@
+[{
+	"type": "rpc",
+	"id": "rpc.apttool.executesearch",
+	"params": {
+		"type": "object",
+		"properties": {
+			"start": {
+				"type": "integer",
+				"required": true
+			},
+			"limit": {
+				"type": [ "integer", "null" ],
+				"required": true
+			},
+			"sortfield": {
+				"type": [ "string", "null" ]
+			},
+			"sortdir": {
+				"type": [ "string", "null" ],
+				"enum": [ "asc", "ASC", "desc", "DESC" ]
+			},
+			"term": {
+				"type": "string"
+			}
+		}
+	}
+},{
+	"type": "rpc",
+	"id": "rpc.apttool.setpackage",
+	"params": {
+		"type": "object",
+		"properties": {
+			"uuid": {
+				"type": "string",
+				"format": "uuidv4",
+				"required": true
+			},
+			"packagename": {
+				"type": "string",
+				"required": true
+			},
+			"backports": {
+			    "type": "boolean",
+				"required": true
+			}
+		}
+	}
+},{
+	"type": "rpc",
+	"id": "rpc.apttool.docommand",
+	"params": {
+		"type": "object",
+		"properties": {
+			"packagename": {
+				"type": "string",
+				"required": true
+			},
+			"command": {
+			    "type": "string",
+				"enum": [ "install", "remove", "purge" ],
+				"required": true
+			},
+			"backports": {
+				"type": "boolean",
+				"required": true
+			}
+		}
+	}
+}]
