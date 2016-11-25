@@ -23,6 +23,6 @@ OMV.WorkspaceManager.registerNode({
     id      : "apttool",
     path    : "/service",
     text    : _("Apt Tool"),
-    icon16  : "images/search.png",
-    iconSvg : "images/search.svg"
+    icon16  : "images/software.png",
+    iconSvg : "images/software.svg"
 });
