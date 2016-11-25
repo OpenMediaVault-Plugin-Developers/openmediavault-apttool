@@ -18,7 +18,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-require_once("openmediavault/globals.inc");
+require_once('openmediavault/globals.inc');
 
 class OMVRpcServiceAptTool extends \OMV\Rpc\ServiceAbstract
 {
@@ -30,31 +30,38 @@ class OMVRpcServiceAptTool extends \OMV\Rpc\ServiceAbstract
     public function initialize()
     {
         $this->registerMethod('executeSearch');
-        $this->registerMethod("getPackageList");
-        $this->registerMethod("getPackage");
-        $this->registerMethod("setPackage");
-        $this->registerMethod("deletePackage");
-        $this->registerMethod("doCommand");
+        $this->registerMethod('getPackageList');
+        $this->registerMethod('getPackage');
+        $this->registerMethod('setPackage');
+        $this->registerMethod('deletePackage');
+        $this->registerMethod('doCommand');
     }
 
     public function executeSearch($params, $context)
     {
         // Validate the RPC caller context.
-        $this->validateMethodContext($context, ["role" => OMV_ROLE_ADMINISTRATOR]);
+        $this->validateMethodContext($context, ['role' => OMV_ROLE_ADMINISTRATOR]);
 
         // Validate the parameters of the RPC service method.
-        $this->validateMethodParams($params, "rpc.apttool.executesearch");
+        $this->validateMethodParams($params, 'rpc.apttool.executesearch');
 
         $results = [];
 
         if (strlen($params['term']) > 1) {
-            $cmd = new \OMV\System\Process("apt-cache", $params['type'], escapeshellarg($params['term']));
+            if ($params['type'] == 'dpkg') {
+                $command = 'dpkg -l | grep';
+                $command2= '';
+            } else {
+                $command = 'apt-cache';
+                $command2 = $params['type'];
+            }
+            $cmd = new \OMV\System\Process($command, $command2, escapeshellarg($params['term']));
             $cmd->setQuiet(true);
             $cmd->execute($output);
 
             if (empty($output)) {
                 $results[] = [
-                    "packagename" => gettext("No results found.")
+                    'packagename' => gettext('No results found.')
                 ];
             } else {
                 foreach ($output as $line) {
@@ -63,13 +70,13 @@ class OMVRpcServiceAptTool extends \OMV\Rpc\ServiceAbstract
 
                     // Prepare configuration data.
                     $results[] = [
-                        "packagename" => trim($line)
+                        'packagename' => trim($line)
                     ];
                 }
             }
         } else {
             $results[] = [
-                "packagename" => gettext("Search must use at least two characters.")
+                'packagename' => gettext('Search must use at least two characters.')
             ];
         }
 
@@ -81,12 +88,12 @@ class OMVRpcServiceAptTool extends \OMV\Rpc\ServiceAbstract
     public function getPackageList($params, $context)
     {
         // Validate the RPC caller context.
-        $this->validateMethodContext($context, ["role" => OMV_ROLE_ADMINISTRATOR]);
+        $this->validateMethodContext($context, ['role' => OMV_ROLE_ADMINISTRATOR]);
         // Validate the parameters of the RPC service method.
-        $this->validateMethodParams($params, "rpc.common.getlist");
+        $this->validateMethodParams($params, 'rpc.common.getlist');
         // Get the configuration object.
         $db = \OMV\Config\Database::getInstance();
-        $objects = $db->getAssoc("conf.service.apttool.package");
+        $objects = $db->getAssoc('conf.service.apttool.package');
         // Filter the result.
         return $this->applyFilter($objects, $params['start'], $params['limit'],
             $params['sortfield'], $params['sortdir']);
@@ -95,29 +102,29 @@ class OMVRpcServiceAptTool extends \OMV\Rpc\ServiceAbstract
     public function getPackage($params, $context)
     {
         // Validate the RPC caller context.
-        $this->validateMethodContext($context, ["role" => OMV_ROLE_ADMINISTRATOR]);
+        $this->validateMethodContext($context, ['role' => OMV_ROLE_ADMINISTRATOR]);
         // Validate the parameters of the RPC service method.
-        $this->validateMethodParams($params, "rpc.common.objectuuid");
+        $this->validateMethodParams($params, 'rpc.common.objectuuid');
         // Get the configuration object.
         $db = \OMV\Config\Database::getInstance();
-        return $db->getAssoc("conf.service.apttool.package", $params['uuid']);
+        return $db->getAssoc('conf.service.apttool.package', $params['uuid']);
     }
 
     public function setPackage($params, $context)
     {
         // Validate the RPC caller context.
-        $this->validateMethodContext($context, ["role" => OMV_ROLE_ADMINISTRATOR]);
+        $this->validateMethodContext($context, ['role' => OMV_ROLE_ADMINISTRATOR]);
         // Validate the parameters of the RPC service method.
-        $this->validateMethodParams($params, "rpc.apttool.setpackage");
+        $this->validateMethodParams($params, 'rpc.apttool.setpackage');
         // Prepare the configuration object.
-        $object = new \OMV\Config\ConfigObject("conf.service.apttool.package");
+        $object = new \OMV\Config\ConfigObject('conf.service.apttool.package');
         $object->setAssoc($params);
         // Set the configuration object.
         $isNew = $object->isNew();
         $db = \OMV\Config\Database::getInstance();
         if (TRUE === $isNew) {
             // Check uniqueness - Packaged folder
-            $db->assertIsUnique($object, "packagename");
+            $db->assertIsUnique($object, 'packagename');
         }
         $db->set($object);
         // Return the configuration object.
@@ -127,12 +134,12 @@ class OMVRpcServiceAptTool extends \OMV\Rpc\ServiceAbstract
     public function deletePackage($params, $context)
     {
         // Validate the RPC caller context.
-        $this->validateMethodContext($context, ["role" => OMV_ROLE_ADMINISTRATOR]);
+        $this->validateMethodContext($context, ['role' => OMV_ROLE_ADMINISTRATOR]);
         // Validate the parameters of the RPC service method.
-        $this->validateMethodParams($params, "rpc.common.objectuuid");
+        $this->validateMethodParams($params, 'rpc.common.objectuuid');
         // Delete the configuration object.
         $db = \OMV\Config\Database::getInstance();
-        $object = $db->get("conf.service.apttool.package", $params['uuid']);
+        $object = $db->get('conf.service.apttool.package', $params['uuid']);
         $db->delete($object);
         // Return the deleted configuration object.
         return $object->getAssoc();
@@ -149,23 +156,23 @@ class OMVRpcServiceAptTool extends \OMV\Rpc\ServiceAbstract
           use ($params) {
             // Install the packages.
             $cmdArgs = [];
-            $cmdArgs[] = "--yes";
+            $cmdArgs[] = '--yes';
             if ($params['command'] == 'install') {
                 if ($params['backports'] == 'true') {
-                    $cmdArgs[] = "-t jessie-backports";
+                    $cmdArgs[] = '-t jessie-backports';
                 }
-                $cmdArgs[] = "--force-yes";
-                $cmdArgs[] = "--fix-missing";
-                $cmdArgs[] = "--allow-unauthenticated";
-                $cmdArgs[] = "--reinstall";
+                $cmdArgs[] = '--force-yes';
+                $cmdArgs[] = '--fix-missing';
+                $cmdArgs[] = '--allow-unauthenticated';
+                $cmdArgs[] = '--reinstall';
             } else {
-                $cmdArgs[] = "--auto-remove";
-                $cmdArgs[] = "--purge";
+                $cmdArgs[] = '--auto-remove';
+                $cmdArgs[] = '--purge';
             }
             $cmdArgs[] = $params['command'];
             $cmdArgs[] = $params['packagename'];
-            $cmd = new \OMV\System\Process("apt-get", $cmdArgs);
-            $cmd->setEnv("DEBIAN_FRONTEND", "noninteractive");
+            $cmd = new \OMV\System\Process('apt-get', $cmdArgs);
+            $cmd->setEnv('DEBIAN_FRONTEND', 'noninteractive');
             $cmd->setRedirect2to1();
             $cmdLine = $cmd->getCommandLine();
             if (0 !== $this->exec($cmdLine, $output, $bgOutputFilename))

@@ -24,7 +24,7 @@
 			},
 			"type": {
 				"type": "string",
-				"enum": [ "policy", "search" ]
+				"enum": [ "dpkg", "policy", "search" ]
 			}
 		}
 	}
