@@ -36,7 +36,7 @@ Ext.define("OMV.module.admin.service.apttool.Search", {
 
     term : "",
     type : "search",
-    
+
     hidePagingToolbar : false,
     hideAddButton     : true,
     hideEditButton    : true,
@@ -100,7 +100,7 @@ Ext.define("OMV.module.admin.service.apttool.Search", {
                 },
                 specialkey : function(field, e) {
                     if (e.getKey() == e.ENTER) {
-                        me.onSearchButton();
+                        me.onSearchButton("search");
                     }
                 }
             }
@@ -130,7 +130,11 @@ Ext.define("OMV.module.admin.service.apttool.Search", {
     },
 
     onSearchButton : function (cmd) {
-        this.type = cmd;
+        if (cmd.length > 0) {
+            this.type = cmd;
+        } else {
+            this.type = "search";
+        }
         var store = this.createStore();
         this.reconfigure(store, Ext.clone(this.columnsTpl));
         this.initState();

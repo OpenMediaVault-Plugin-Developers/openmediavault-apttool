@@ -1,3 +1,9 @@
+openmediavault-apttool (3.2.1) stable; urgency=low
+
+  * Bug fix when hitting enter in search box
+
+ -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Fri, 25 Nov 2016 12:39:36 -0600
+
 openmediavault-apttool (3.2) stable; urgency=low
 
   * Change icon
