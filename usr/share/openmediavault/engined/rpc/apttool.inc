@@ -48,7 +48,7 @@ class OMVRpcServiceAptTool extends \OMV\Rpc\ServiceAbstract
         $results = [];
 
         if (strlen($params['term']) > 1) {
-            $cmd = new \OMV\System\Process("apt-cache", "search", escapeshellarg($params['term']));
+            $cmd = new \OMV\System\Process("apt-cache", $params['type'], escapeshellarg($params['term']));
             $cmd->setQuiet(true);
             $cmd->execute($output);
 

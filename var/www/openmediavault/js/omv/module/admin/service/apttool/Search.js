@@ -35,7 +35,8 @@ Ext.define("OMV.module.admin.service.apttool.Search", {
     ],
 
     term : "",
-
+    type : "search",
+    
     hidePagingToolbar : false,
     hideAddButton     : true,
     hideEditButton    : true,
@@ -78,7 +79,8 @@ Ext.define("OMV.module.admin.service.apttool.Search", {
                 },
                 appendSortParams: true,
                 extraParams : {
-                    term : me.term
+                    term : me.term,
+                    type : me.type
                 }
             }
         });
@@ -107,13 +109,21 @@ Ext.define("OMV.module.admin.service.apttool.Search", {
             text    : _("Search"),
             icon    : "images/search.png",
             iconCls : Ext.baseCSSPrefix + "btn-icon-16x16",
-            handler : Ext.Function.bind(me.onSearchButton, me, [ me ]),
+            handler : Ext.Function.bind(me.onSearchButton, me, [ "search" ]),
+            scope   : me
+        },{
+            xtype   : "button",
+            text    : _("Policy"),
+            icon    : "images/search.png",
+            iconCls : Ext.baseCSSPrefix + "btn-icon-16x16",
+            handler : Ext.Function.bind(me.onSearchButton, me, [ "policy" ]),
             scope   : me
         }]);
         return items;
     },
 
-    onSearchButton : function () {
+    onSearchButton : function (cmd) {
+        this.type = cmd;
         var store = this.createStore();
         this.reconfigure(store, Ext.clone(this.columnsTpl));
         this.initState();
