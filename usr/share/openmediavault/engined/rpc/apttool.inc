@@ -102,7 +102,7 @@ class OMVRpcServiceAptTool extends \OMV\Rpc\ServiceAbstract
             // Update the 'installed' property.
             $cmd = sprintf("dpkg-query -W -f='\${Version}' %s", $objectv->get('packagename'));
             if (0 == $this->exec($cmd, $output)) {
-                $objectv->set('installed', 'Yes - '.$output[0]);
+                $objectv->set('installed', sprintf('%s - %s', gettext("Yes"), $output[0]));
             }
             $objectsAssoc[] = $objectv->getAssoc();
         }
