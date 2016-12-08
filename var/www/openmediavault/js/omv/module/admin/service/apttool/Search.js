@@ -106,7 +106,7 @@ Ext.define("OMV.module.admin.service.apttool.Search", {
             }
         },{
             xtype   : "button",
-            text    : _("Search"),
+            text    : _("Search Repositories"),
             icon    : "images/search.png",
             iconCls : Ext.baseCSSPrefix + "btn-icon-16x16",
             handler : Ext.Function.bind(me.onSearchButton, me, [ "search" ]),
@@ -120,7 +120,7 @@ Ext.define("OMV.module.admin.service.apttool.Search", {
             scope   : me
         },{
             xtype   : "button",
-            text    : _("dpkg -l"),
+            text    : _("Search Local"),
             icon    : "images/search.png",
             iconCls : Ext.baseCSSPrefix + "btn-icon-16x16",
             handler : Ext.Function.bind(me.onSearchButton, me, [ "dpkg" ]),
