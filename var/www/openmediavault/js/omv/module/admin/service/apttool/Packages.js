@@ -87,6 +87,11 @@ Ext.define("OMV.module.admin.service.apttool.Packages", {
         resizable : false,
         trueIcon  : "switch_on.png",
         falseIcon : "switch_off.png"
+    },{
+        text      : _("Installed"),
+        sortable  : true,
+        dataIndex : "installed",
+        stateId   : "installed"
     }],
 
     initComponent : function () {
@@ -99,7 +104,8 @@ Ext.define("OMV.module.admin.service.apttool.Packages", {
                     fields     : [
                         { name  : "uuid", type: "string" },
                         { name  : "packagename", type: "string" },
-                        { name  : "backports", type: "string" }
+                        { name  : "backports", type: "string" },
+                        { name  : "installed", type: "string" }
                     ]
                 }),
                 proxy    : {
@@ -219,6 +225,6 @@ OMV.WorkspaceManager.registerPanel({
     id        : "packages",
     path      : "/service/apttool",
     text      : _("Packages"),
-    position  : 20,
+    position  : 10,
     className : "OMV.module.admin.service.apttool.Packages"
 });

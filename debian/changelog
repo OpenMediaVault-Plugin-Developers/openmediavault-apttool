@@ -1,3 +1,10 @@
+openmediavault-apttool (3.3) stable; urgency=low
+
+  * Add button to add package found in search to Packages list
+  * Show install status with version if installed
+
+ -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Thu, 08 Dec 2016 10:22:42 -0600
+
 openmediavault-apttool (3.2.1) stable; urgency=low
 
   * Bug fix when hitting enter in search box

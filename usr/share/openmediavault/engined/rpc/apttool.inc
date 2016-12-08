@@ -93,9 +93,21 @@ class OMVRpcServiceAptTool extends \OMV\Rpc\ServiceAbstract
         $this->validateMethodParams($params, 'rpc.common.getlist');
         // Get the configuration object.
         $db = \OMV\Config\Database::getInstance();
-        $objects = $db->getAssoc('conf.service.apttool.package');
+        $objects = $db->get('conf.service.apttool.package');
+        // Add additional share informations.
+        $objectsAssoc = [];
+        foreach ($objects as $objectk => &$objectv) {
+            // Add the new property 'installed'.
+            $objectv->add('installed', 'string', gettext("No"));
+            // Update the 'installed' property.
+            $cmd = sprintf("dpkg-query -W -f='\${Version}' %s", $objectv->get('packagename'));
+            if (0 == $this->exec($cmd, $output)) {
+                $objectv->set('installed', 'Yes - '.$output[0]);
+            }
+            $objectsAssoc[] = $objectv->getAssoc();
+        }
         // Filter the result.
-        return $this->applyFilter($objects, $params['start'], $params['limit'],
+        return $this->applyFilter($objectsAssoc, $params['start'], $params['limit'],
             $params['sortfield'], $params['sortdir']);
     }
 

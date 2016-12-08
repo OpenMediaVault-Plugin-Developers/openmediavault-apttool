@@ -125,6 +125,18 @@ Ext.define("OMV.module.admin.service.apttool.Search", {
             iconCls : Ext.baseCSSPrefix + "btn-icon-16x16",
             handler : Ext.Function.bind(me.onSearchButton, me, [ "dpkg" ]),
             scope   : me
+        },{
+            xtype    : "button",
+            text     : _("Add to Packages tab"),
+            icon     : "images/add.png",
+            iconCls  : Ext.baseCSSPrefix + "btn-icon-16x16",
+            handler  : Ext.Function.bind(me.onAddButton, me, [ me ]),
+            scope    : me,
+            disabled : true,
+            selectionConfig : {
+                minSelections : 1,
+                maxSelections : 1
+            }
         }]);
         return items;
     },
@@ -139,6 +151,30 @@ Ext.define("OMV.module.admin.service.apttool.Search", {
         this.reconfigure(store, Ext.clone(this.columnsTpl));
         this.initState();
         this.getPagingToolbar().bindStore(this.store);
+    },
+
+    onAddButton : function() {
+        var me = this;
+        if (me.type !== "search") {
+            alert(_("You must search for a package first."));
+        } else {
+            var record = me.getSelected();
+            var packageString = record.get("packagename").split(" ");
+            var packageName = packageString[0];
+            OMV.Rpc.request({
+                scope       : me,
+                relayErrors : false,
+                rpcData     : {
+                    service  : "AptTool",
+                    method   : "setPackage",
+                    params   : {
+                        "uuid"        : OMV.UUID_UNDEFINED,
+                        "packagename" : packageName,
+                        "backports"   : false
+                    }
+                }
+            });
+        }
     }
 });
 
@@ -146,6 +182,6 @@ OMV.WorkspaceManager.registerPanel({
     id        : "search",
     path      : "/service/apttool",
     text      : _("Search"),
-    position  : 10,
+    position  : 20,
     className : "OMV.module.admin.service.apttool.Search"
 });
