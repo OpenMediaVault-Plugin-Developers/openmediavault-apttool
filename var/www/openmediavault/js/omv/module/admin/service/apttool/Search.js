@@ -45,6 +45,7 @@ Ext.define("OMV.module.admin.service.apttool.Search", {
     stateId           : "bdb1c917-2ed1-4f59-c67f-bc2ef3ab2a5a",
 
     columnsTpl : [{
+        xtype     : "textcolumn",
         text      : _("Package Name"),
         sortable  : false,
         dataIndex : "packagename",

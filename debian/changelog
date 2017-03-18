@@ -1,3 +1,9 @@
+openmediavault-apttool (3.4) stable; urgency=low
+
+  * Improve foreign content handling
+
+ -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Sat, 18 Mar 2017 09:35:33 -0500
+
 openmediavault-apttool (3.3) stable; urgency=low
 
   * Add button to add package found in search to Packages list

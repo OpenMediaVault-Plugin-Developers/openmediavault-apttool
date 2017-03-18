@@ -73,6 +73,7 @@ Ext.define("OMV.module.admin.service.apttool.Packages", {
     stateful          : true,
     stateId           : "c889057b-b2c0-dc48-e4c1-8b9b41b14d7b",
     columns           : [{
+        xtype     : "textcolumn",
         text      : _("Package Name"),
         sortable  : true,
         dataIndex : "packagename",
@@ -88,6 +89,7 @@ Ext.define("OMV.module.admin.service.apttool.Packages", {
         trueIcon  : "switch_on.png",
         falseIcon : "switch_off.png"
     },{
+        xtype     : "textcolumn",
         text      : _("Installed"),
         sortable  : true,
         dataIndex : "installed",
