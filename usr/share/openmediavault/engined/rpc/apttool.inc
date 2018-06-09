@@ -3,7 +3,7 @@
  * @author    Volker Theile <volker.theile@openmediavault.org>
  * @author    OpenMediaVault Plugin Developers <plugins@omv-extras.org>
  * @copyright Copyright (c) 2009-2013 Volker Theile
- * @copyright Copyright (c) 2016 OpenMediaVault Plugin Developers
+ * @copyright Copyright (c) 2016-2018 OpenMediaVault Plugin Developers
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -34,6 +34,7 @@ class OMVRpcServiceAptTool extends \OMV\Rpc\ServiceAbstract
         $this->registerMethod('getPackage');
         $this->registerMethod('setPackage');
         $this->registerMethod('deletePackage');
+        $this->registerMethod('getHoldList');
         $this->registerMethod('doCommand');
     }
 
@@ -41,12 +42,9 @@ class OMVRpcServiceAptTool extends \OMV\Rpc\ServiceAbstract
     {
         // Validate the RPC caller context.
         $this->validateMethodContext($context, ['role' => OMV_ROLE_ADMINISTRATOR]);
-
         // Validate the parameters of the RPC service method.
         $this->validateMethodParams($params, 'rpc.apttool.executesearch');
-
         $results = [];
-
         if (strlen($params['term']) > 1) {
             if ($params['type'] == 'dpkg') {
                 $command = 'dpkg -l | grep';
@@ -79,7 +77,6 @@ class OMVRpcServiceAptTool extends \OMV\Rpc\ServiceAbstract
                 'packagename' => gettext('Search must use at least two characters.')
             ];
         }
-
         // Filter the result.
         return $this->applyFilter($results, $params['start'], $params['limit'],
             $params['sortfield'], $params['sortdir']);
@@ -93,16 +90,28 @@ class OMVRpcServiceAptTool extends \OMV\Rpc\ServiceAbstract
         $this->validateMethodParams($params, 'rpc.common.getlist');
         // Get the configuration object.
         $db = \OMV\Config\Database::getInstance();
-        $objects = $db->get('conf.service.apttool.package');
+        $objects = $db->get('conf.service.apttool');
         // Add additional share informations.
         $objectsAssoc = [];
         foreach ($objects as $objectk => &$objectv) {
-            // Add the new property 'installed'.
+            // Add and update the installed property
             $objectv->add('installed', 'string', gettext("No"));
-            // Update the 'installed' property.
-            $cmd = sprintf("dpkg-query -W -f='\${Version}' %s", $objectv->get('packagename'));
-            if (0 == $this->exec($cmd, $output)) {
-                $objectv->set('installed', sprintf('%s - %s', gettext("Yes"), $output[0]));
+            $cmdLine = sprintf("dpkg-query -W -f='\${Version}' %s", $objectv->get('packagename'));
+            $cmd = new \OMV\System\Process($cmdLine);
+            $cmd->setQuiet(true);
+            $output = [];
+            $cmd->execute($output, $exitStatus);
+            if ((0 == $exitStatus) && (!empty($output))) {
+                $objectv->set('installed', gettext("Yes") . ' - ' . $output[0]);
+            }
+            // Add and update the 'hold' property.
+            $objectv->add('hold', 'string', gettext("No"));
+            $cmd = new \OMV\System\Process('apt-mark showholds', $objectv->get('packagename'));
+            $cmd->setQuiet(true);
+            $output = [];
+            $cmd->execute($output);
+            if (!empty($output)) {
+                $objectv->set('hold', gettext("Yes"));
             }
             $objectsAssoc[] = $objectv->getAssoc();
         }
@@ -129,7 +138,7 @@ class OMVRpcServiceAptTool extends \OMV\Rpc\ServiceAbstract
         // Validate the parameters of the RPC service method.
         $this->validateMethodParams($params, 'rpc.apttool.setpackage');
         // Prepare the configuration object.
-        $object = new \OMV\Config\ConfigObject('conf.service.apttool.package');
+        $object = new \OMV\Config\ConfigObject('conf.service.apttool');
         $object->setAssoc($params);
         // Set the configuration object.
         $isNew = $object->isNew();
@@ -151,10 +160,32 @@ class OMVRpcServiceAptTool extends \OMV\Rpc\ServiceAbstract
         $this->validateMethodParams($params, 'rpc.common.objectuuid');
         // Delete the configuration object.
         $db = \OMV\Config\Database::getInstance();
-        $object = $db->get('conf.service.apttool.package', $params['uuid']);
+        $object = $db->get('conf.service.apttool', $params['uuid']);
         $db->delete($object);
         // Return the deleted configuration object.
         return $object->getAssoc();
+    }
+
+    public function getHoldList($params, $context)
+    {
+        // Validate the RPC caller context.
+        $this->validateMethodContext($context, ['role' => OMV_ROLE_ADMINISTRATOR]);
+        // Validate the parameters of the RPC service method.
+        $this->validateMethodParams($params, 'rpc.common.getlist');
+        // Get the output of apt-mark showhold
+        $cmd = new \OMV\System\Process('apt-mark', 'showhold', ' | sort');
+        $cmd->execute($output);
+        $packages = [];
+        foreach ($output as $package) {
+            if (empty($package))
+                continue;
+            $packages[] = [ 'package' => $package ];
+        }
+        if (empty($packages)) {
+            $packages[] = [ 'package' => gettext("None found.") ];
+        }
+        return $this->applyFilter($packages, $params['start'], $params['limit'],
+            $params['sortfield'], $params['sortdir']);
     }
 
     public function doCommand($params, $context)
@@ -168,22 +199,32 @@ class OMVRpcServiceAptTool extends \OMV\Rpc\ServiceAbstract
           use ($params) {
             // Install the packages.
             $cmdArgs = [];
-            $cmdArgs[] = '--yes';
-            if ($params['command'] == 'install') {
-                if ($params['backports'] == 'true') {
-                    $cmdArgs[] = '-t jessie-backports';
-                }
-                $cmdArgs[] = '--force-yes';
-                $cmdArgs[] = '--fix-missing';
-                $cmdArgs[] = '--allow-unauthenticated';
-                $cmdArgs[] = '--reinstall';
-            } else {
-                $cmdArgs[] = '--auto-remove';
-                $cmdArgs[] = '--purge';
+            switch ($params['command']) {
+                case 'install':
+                    $cmdBin = 'apt-get';
+                    $cmdArgs[] = '--yes';
+                    if ($params['backports'] == 'true') {
+                        $cmdArgs[] = '-t jessie-backports';
+                    }
+                    $cmdArgs[] = '--force-yes';
+                    $cmdArgs[] = '--fix-missing';
+                    $cmdArgs[] = '--allow-unauthenticated';
+                    $cmdArgs[] = '--reinstall';
+                    break;
+                case 'remove':
+                    $cmdBin = 'apt-get';
+                    $cmdArgs[] = '--yes';
+                    $cmdArgs[] = '--auto-remove';
+                    $cmdArgs[] = '--purge';
+                    break;
+                case 'hold':
+                case 'unhold':
+                    $cmdBin = 'apt-mark';
+                    break;
             }
             $cmdArgs[] = $params['command'];
             $cmdArgs[] = $params['packagename'];
-            $cmd = new \OMV\System\Process('apt-get', $cmdArgs);
+            $cmd = new \OMV\System\Process($cmdBin, $cmdArgs);
             $cmd->setEnv('DEBIAN_FRONTEND', 'noninteractive');
             $cmd->setRedirect2to1();
             $cmdLine = $cmd->getCommandLine();

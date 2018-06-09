@@ -1,6 +1,6 @@
 {
 	"type": "config",
-	"id": "conf.service.apttool.package",
+	"id": "conf.service.apttool",
 	"title": "AptTool package",
 	"queryinfo": {
 		"xpath": "//services/apttool/packages/package",

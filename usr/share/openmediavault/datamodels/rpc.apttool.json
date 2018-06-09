@@ -61,7 +61,7 @@
 			},
 			"command": {
 				"type": "string",
-				"enum": [ "install", "remove", "purge" ],
+				"enum": [ "install", "remove", "purge", "hold", "unhold" ],
 				"required": true
 			},
 			"backports": {

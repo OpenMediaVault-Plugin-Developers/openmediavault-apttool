@@ -7,16 +7,16 @@ set -e
 
 case "$1" in
     configure)
-        SERVICE_XPATH_NAME="apttool"
-        SERVICE_XPATH="/config/services/${SERVICE_XPATH_NAME}"
-
-        if ! omv_config_exists "${SERVICE_XPATH}"; then
-            omv_config_add_node "/config/services" "${SERVICE_XPATH_NAME}"
-            omv_config_add_node "${SERVICE_XPATH}" "packages"
-        fi
-
+        # Activate package triggers.
         dpkg-trigger update-fixperms
         dpkg-trigger update-locale
+
+        # Initialize and migrate configuration database.
+        echo "Updating configuration database ..."
+        omv-confdbadm create "conf.service.apttool"
+        if [ -n "$2" ]; then
+            omv-confdbadm migrate "conf.service.apttool" "${2}"
+        fi
     ;;
 
     abort-upgrade|abort-remove|abort-deconfigure)

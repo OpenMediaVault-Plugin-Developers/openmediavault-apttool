@@ -3,7 +3,7 @@
  * @author    Volker Theile <volker.theile@openmediavault.org>
  * @author    OpenMediaVault Plugin Developers <plugins@omv-extras.org>
  * @copyright Copyright (c) 2009-2013 Volker Theile
- * @copyright Copyright (c) 2016 OpenMediaVault Plugin Developers
+ * @copyright Copyright (c) 2016-2018 OpenMediaVault Plugin Developers
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -27,94 +27,101 @@
 // require("js/omv/data/Model.js")
 // require("js/omv/data/proxy/Rpc.js")
 
-Ext.define("OMV.module.admin.service.apttool.Package", {
-    extend : "OMV.workspace.window.Form",
-    uses   : [
-        "OMV.workspace.window.plugin.ConfigObject"
+Ext.define('OMV.module.admin.service.apttool.Package', {
+    extend:'OMV.workspace.window.Form',
+    uses:[
+        'OMV.workspace.window.plugin.ConfigObject'
     ],
 
-    rpcService   : "AptTool",
-    rpcGetMethod : "getPackage",
-    rpcSetMethod : "setPackage",
-    plugins      : [{
-        ptype : "configobject"
+    rpcService: 'AptTool',
+    rpcGetMethod: 'getPackage',
+    rpcSetMethod: 'setPackage',
+    plugins: [{
+        ptype: 'configobject'
     }],
 
-    getFormItems : function () {
+    getFormItems: function () {
         var me = this;
         return [{
-            xtype      : "textfield",
-            name       : "packagename",
-            fieldLabel : _("package Name"),
-            allowBlank : false
+            xtype: 'textfield',
+            name: 'packagename',
+            fieldLabel: _('package Name'),
+            allowBlank: false
         },{
-            xtype      : "checkbox",
-            name       : "backports",
-            fieldLabel : _("Backports?"),
-            checked    : false
+            xtype: 'checkbox',
+            name: 'backports',
+            fieldLabel: _('Backports?'),
+            checked: false
         },];
     }
 });
 
-Ext.define("OMV.module.admin.service.apttool.Packages", {
-    extend   : "OMV.workspace.grid.Panel",
-    requires : [
-        "OMV.Rpc",
-        "OMV.data.Store",
-        "OMV.data.Model",
-        "OMV.data.proxy.Rpc"
+Ext.define('OMV.module.admin.service.apttool.Packages', {
+    extend: 'OMV.workspace.grid.Panel',
+    requires: [
+        'OMV.Rpc',
+        'OMV.data.Store',
+        'OMV.data.Model',
+        'OMV.data.proxy.Rpc'
     ],
-    uses     : [
-        "OMV.module.admin.service.apttool.Package"
+    uses: [
+        'OMV.module.admin.service.apttool.Package'
     ],
 
-    hidePagingToolbar : false,
-    hideEditButton    : true,
-    stateful          : true,
-    stateId           : "c889057b-b2c0-dc48-e4c1-8b9b41b14d7b",
-    columns           : [{
-        xtype     : "textcolumn",
-        text      : _("Package Name"),
-        sortable  : true,
-        dataIndex : "packagename",
-        stateId   : "packagename"
+    hidePagingToolbar: false,
+    hideEditButton: true,
+    stateful: true,
+    stateId: 'c889057b-b2c0-dc48-e4c1-8b9b41b14d7b',
+    columns: [{
+        xtype: 'textcolumn',
+        text: _('Package Name'),
+        sortable: true,
+        dataIndex: 'packagename',
+        stateId: 'packagename'
     },{
-        xtype     : "booleaniconcolumn",
-        header    : _("Backports"),
-        sortable  : true,
-        dataIndex : "backports",
-        align     : "center",
-        width     : 80,
-        resizable : false,
-        trueIcon  : "switch_on.png",
-        falseIcon : "switch_off.png"
+        xtype: 'booleaniconcolumn',
+        header: _('Backports'),
+        sortable: true,
+        dataIndex: 'backports',
+        align: 'center',
+        width: 100,
+        resizable: false,
+        trueIcon: 'switch_on.png',
+        falseIcon: 'switch_off.png'
     },{
-        xtype     : "textcolumn",
-        text      : _("Installed"),
-        sortable  : true,
-        dataIndex : "installed",
-        stateId   : "installed"
+        xtype: 'textcolumn',
+        text: _('Installed'),
+        sortable: true,
+        dataIndex: 'installed',
+        stateId: 'installed'
+    },{
+        xtype: 'textcolumn',
+        text: _('Hold'),
+        sortable: true,
+        dataIndex: 'hold',
+        stateId: 'hold'
     }],
 
-    initComponent : function () {
+    initComponent: function () {
         var me = this;
         Ext.apply(me, {
-            store : Ext.create("OMV.data.Store", {
-                autoLoad : true,
-                model    : OMV.data.Model.createImplicit({
-                    idProperty : "uuid",
-                    fields     : [
-                        { name  : "uuid", type: "string" },
-                        { name  : "packagename", type: "string" },
-                        { name  : "backports", type: "string" },
-                        { name  : "installed", type: "string" }
+            store: Ext.create('OMV.data.Store', {
+                autoLoad: true,
+                model: OMV.data.Model.createImplicit({
+                    idProperty: 'uuid',
+                    fields: [
+                        { name: 'uuid', type: 'string' },
+                        { name: 'packagename', type: 'string' },
+                        { name: 'backports', type: 'string' },
+                        { name: 'installed', type: 'string' },
+                        { name: 'hold', type: 'string' }
                     ]
                 }),
-                proxy    : {
-                    type    : "rpc",
-                    rpcData : {
-                        service : "AptTool",
-                        method  : "getPackageList"
+                proxy: {
+                    type: 'rpc',
+                    rpcData: {
+                        service: 'AptTool',
+                        method: 'getPackageList'
                     }
                 }
             })
@@ -122,28 +129,36 @@ Ext.define("OMV.module.admin.service.apttool.Packages", {
         me.callParent(arguments);
     },
 
-    getTopToolbarItems : function() {
+    getTopToolbarItems: function() {
         var me = this;
         var items = me.callParent(arguments);
         Ext.Array.push(items, {
-            id       : me.getId() + "-tool",
-            xtype    : "button",
-            text     : _("Tools"),
-            scope    : this,
-            icon     : "images/software.png",
-            disabled : true,
-            selectionConfig : {
-                minSelections : 1,
-                maxSelections : 1
+            id: me.getId() + '-tool',
+            xtype: 'button',
+            text: _('Tools'),
+            scope: this,
+            icon: 'images/software.png',
+            disabled: true,
+            selectionConfig: {
+                minSelections: 1,
+                maxSelections: 1
             },
-            menu     : [{
-                text     : _("Install"),
-                icon     : "images/add.png",
-                handler  : Ext.Function.bind(me.onToolsButton, me, [ "install" ])
+            menu: [{
+                text: _('Install'),
+                icon: 'images/add.png',
+                handler: Ext.Function.bind(me.onToolsButton, me, [ 'install' ])
             },{
-                text     : _("Remove"),
-                icon     : "images/delete.png",
-                handler  : Ext.Function.bind(me.onToolsButton, me, [ "remove" ])
+                text: _('Remove'),
+                icon: 'images/delete.png',
+                handler: Ext.Function.bind(me.onToolsButton, me, [ 'remove' ])
+            },{
+                text: _('Hold'),
+                icon: 'images/pause.png',
+                handler: Ext.Function.bind(me.onToolsButton, me, [ 'hold' ])
+            },{
+                text: _('Unhold'),
+                icon: 'images/play.png',
+                handler: Ext.Function.bind(me.onToolsButton, me, [ 'unhold' ])
             }]
         });
         return items;
@@ -151,12 +166,12 @@ Ext.define("OMV.module.admin.service.apttool.Packages", {
 
     onAddButton: function () {
         var me = this;
-        Ext.create("OMV.module.admin.service.apttool.Package", {
-            title     : _("Add package"),
-            uuid      : OMV.UUID_UNDEFINED,
-            listeners : {
-                scope  : me,
-                submit : function () {
+        Ext.create('OMV.module.admin.service.apttool.Package', {
+            title: _('Add package'),
+            uuid: OMV.UUID_UNDEFINED,
+            listeners: {
+                scope: me,
+                submit: function () {
                     this.doReload();
                 }
             }
@@ -166,67 +181,73 @@ Ext.define("OMV.module.admin.service.apttool.Packages", {
     doDeletion: function (record) {
         var me = this;
         OMV.Rpc.request({
-            scope    : me,
-            callback : me.onDeletion,
-            rpcData  : {
-                service : "AptTool",
-                method  : "deletePackage",
-                params  : {
-                    uuid: record.get("uuid")
+            scope: me,
+            callback: me.onDeletion,
+            rpcData: {
+                service: 'AptTool',
+                method: 'deletePackage',
+                params: {
+                    uuid: record.get('uuid')
                 }
             }
         });
     },
 
-    onToolsButton : function(cmd) {
+    onToolsButton: function(cmd) {
         var me = this;
-        var title = "";
+        var title = '';
         var record = me.getSelected();
-        switch(cmd) {
-            case "install":
-                title = _("Installing package ") + record.get("packagename") + " ...";
+        switch (cmd) {
+            case 'install':
+                title = _('Installing package');
                 break;
-            case "remove":
-                title = _("Removing package ") + record.get("packagename") + " ...";
+            case 'remove':
+                title = _('Removing package');
+                break;
+            case 'hold':
+                title = _('Holding package');
+                break;
+            case 'unhold':
+                title = _('Unholding package');
                 break;
         }
-        var wnd = Ext.create("OMV.window.Execute", {
-            title      : title,
-            rpcService : "AptTool",
-            rpcMethod  : "doCommand",
-            rpcParams  : {
-                "command"     : cmd,
-                "packagename" : record.get("packagename"),
-                "backports"   : record.get("backports")
+        var wnd = Ext.create('OMV.window.Execute', {
+            title: title + ' ' + record.get('packagename') + ' ...',
+            rpcService: 'AptTool',
+            rpcMethod: 'doCommand',
+            rpcParams: {
+                'command': cmd,
+                'packagename': record.get('packagename'),
+                'backports': record.get('backports')
             },
-            rpcIgnoreErrors : true,
-            hideStartButton : true,
-            hideStopButton  : true,
-            listeners       : {
-                scope     : me,
-                finish    : function(wnd, response) {
-                    wnd.appendValue(_("Done..."));
-                    wnd.setButtonDisabled("close", false);
+            rpcIgnoreErrors: true,
+            hideStartButton: true,
+            hideStopButton: true,
+            listeners: {
+                scope: me,
+                finish: function(wnd, response) {
+                    wnd.appendValue(_('Done...'));
+                    wnd.setButtonDisabled('close', false);
                 },
-                exception : function(wnd, error) {
+                exception: function(wnd, error) {
                     OMV.MessageBox.error(null, error);
-                    wnd.setButtonDisabled("close", false);
+                    wnd.setButtonDisabled('close', false);
                 },
-                close     : function() {
+                close: function() {
                     this.doReload();
                 }
             }
         });
-        wnd.setButtonDisabled("close", true);
+        wnd.setButtonDisabled('close', true);
         wnd.show();
         wnd.start();
     }
 });
 
 OMV.WorkspaceManager.registerPanel({
-    id        : "packages",
-    path      : "/service/apttool",
-    text      : _("Packages"),
-    position  : 10,
-    className : "OMV.module.admin.service.apttool.Packages"
+    id: 'packages',
+    path: '/service/apttool',
+    text: _('Packages'),
+    position: 10,
+    className: 'OMV.module.admin.service.apttool.Packages'
 });
