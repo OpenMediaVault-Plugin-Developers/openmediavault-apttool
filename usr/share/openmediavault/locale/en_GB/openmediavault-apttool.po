@@ -3,82 +3,86 @@
 # This file is distributed under the same license as the openmediavault-apttool package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# Andi Chandler <andi@gowling.com>, 2017
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-apttool\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-10-12 16:30-0500\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2017-10-12 21:30+0000\n"
+"Last-Translator: Andi Chandler <andi@gowling.com>, 2017\n"
 "Language-Team: English (United Kingdom) (https://www.transifex.com/openmediavault-plugin-developers/teams/1854/en_GB/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: en_GB\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Add package"
-msgstr ""
+msgstr "Add package"
 
 msgid "Add to Packages tab"
-msgstr ""
+msgstr "Add to Packages tab"
 
 msgid "Apt Tool"
-msgstr ""
+msgstr "Apt Tool"
 
 msgid "Backports"
-msgstr ""
+msgstr "Backports"
 
 msgid "Backports?"
-msgstr ""
+msgstr "Backports?"
 
 msgid "Done..."
-msgstr ""
+msgstr "Done..."
 
 msgid "Install"
-msgstr ""
+msgstr "Install"
 
 msgid "Installed"
-msgstr ""
+msgstr "Installed"
 
 msgid "Installing package "
-msgstr ""
+msgstr "Installing package "
 
 msgid "No"
-msgstr ""
+msgstr "No"
 
 msgid "Package Name"
-msgstr ""
+msgstr "Package Name"
 
 msgid "Packages"
-msgstr ""
+msgstr "Packages"
 
 msgid "Policy"
-msgstr ""
+msgstr "Policy"
 
 msgid "Remove"
-msgstr ""
+msgstr "Remove"
 
 msgid "Removing package "
-msgstr ""
+msgstr "Removing package "
 
 msgid "Search"
-msgstr ""
+msgstr "Search"
 
 msgid "Search Local"
-msgstr ""
+msgstr "Search Local"
 
 msgid "Search Repositories"
-msgstr ""
+msgstr "Search Repositories"
 
 msgid "Tools"
-msgstr ""
+msgstr "Tools"
 
 msgid "Yes"
-msgstr ""
+msgstr "Yes"
 
 msgid "You must search for a package first."
-msgstr ""
+msgstr "You must search for a package first."
 
 msgid "package Name"
-msgstr ""
+msgstr "package Name"

@@ -3,82 +3,86 @@
 # This file is distributed under the same license as the openmediavault-apttool package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# Pavel Borecki <pavel.borecki@gmail.com>, 2017
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-apttool\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-10-12 16:30-0500\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2017-10-12 21:30+0000\n"
+"Last-Translator: Pavel Borecki <pavel.borecki@gmail.com>, 2017\n"
 "Language-Team: Czech (Czech Republic) (https://www.transifex.com/openmediavault-plugin-developers/teams/1854/cs_CZ/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: cs_CZ\n"
-"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n <= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;\n"
 
 msgid "Add package"
-msgstr ""
+msgstr "Přidat balíček"
 
 msgid "Add to Packages tab"
-msgstr ""
+msgstr "Přidat na kartu Balíčky"
 
 msgid "Apt Tool"
-msgstr ""
+msgstr "nástroj Apt Tool"
 
 msgid "Backports"
-msgstr ""
+msgstr "Novější verze přenesené do stávajícího systému (backport)"
 
 msgid "Backports?"
-msgstr ""
+msgstr "Novější verze přenesené do stávajícího systému (backport)?"
 
 msgid "Done..."
-msgstr ""
+msgstr "Hotovo…"
 
 msgid "Install"
-msgstr ""
+msgstr "Nainstalovat"
 
 msgid "Installed"
-msgstr ""
+msgstr "Nainstalováno"
 
 msgid "Installing package "
-msgstr ""
+msgstr "Nainstalovat balíček"
 
 msgid "No"
-msgstr ""
+msgstr "Ne"
 
 msgid "Package Name"
-msgstr ""
+msgstr "Název balíčku"
 
 msgid "Packages"
-msgstr ""
+msgstr "Balíčky"
 
 msgid "Policy"
-msgstr ""
+msgstr "Zásada"
 
 msgid "Remove"
-msgstr ""
+msgstr "Odebrat"
 
 msgid "Removing package "
-msgstr ""
+msgstr "Odebírání balíčku"
 
 msgid "Search"
-msgstr ""
+msgstr "Hledat"
 
 msgid "Search Local"
-msgstr ""
+msgstr "Hledat v systému"
 
 msgid "Search Repositories"
-msgstr ""
+msgstr "Hledat v repozitářích"
 
 msgid "Tools"
-msgstr ""
+msgstr "Nástroje"
 
 msgid "Yes"
-msgstr ""
+msgstr "Ano"
 
 msgid "You must search for a package first."
-msgstr ""
+msgstr "Nejprve je třeba hledat balíček"
 
 msgid "package Name"
-msgstr ""
+msgstr "název balíčku"

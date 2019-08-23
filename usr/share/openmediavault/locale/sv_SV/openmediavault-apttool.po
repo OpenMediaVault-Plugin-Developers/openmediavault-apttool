@@ -3,28 +3,32 @@
 # This file is distributed under the same license as the openmediavault-apttool package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# Jonatan Nyberg, 2018
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-apttool\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-10-12 16:30-0500\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2017-10-12 21:30+0000\n"
+"Last-Translator: Jonatan Nyberg, 2018\n"
 "Language-Team: Swedish (https://www.transifex.com/openmediavault-plugin-developers/teams/1854/sv/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: sv\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Add package"
-msgstr ""
+msgstr "Lägg till paket"
 
 msgid "Add to Packages tab"
-msgstr ""
+msgstr "Lägg till i fliken Paket"
 
 msgid "Apt Tool"
-msgstr ""
+msgstr "Apt Tool"
 
 msgid "Backports"
 msgstr ""
@@ -33,52 +37,52 @@ msgid "Backports?"
 msgstr ""
 
 msgid "Done..."
-msgstr ""
+msgstr "Klar..."
 
 msgid "Install"
-msgstr ""
+msgstr "Installera"
 
 msgid "Installed"
-msgstr ""
+msgstr "Installerad"
 
 msgid "Installing package "
-msgstr ""
+msgstr "Installerar paket"
 
 msgid "No"
-msgstr ""
+msgstr "Nej"
 
 msgid "Package Name"
-msgstr ""
+msgstr "Paketnamn"
 
 msgid "Packages"
-msgstr ""
+msgstr "Paket"
 
 msgid "Policy"
 msgstr ""
 
 msgid "Remove"
-msgstr ""
+msgstr "Ta bort"
 
 msgid "Removing package "
-msgstr ""
+msgstr "Tar bort paket"
 
 msgid "Search"
-msgstr ""
+msgstr "Sök"
 
 msgid "Search Local"
-msgstr ""
+msgstr "Sök lokalt"
 
 msgid "Search Repositories"
-msgstr ""
+msgstr "Sök i förråd"
 
 msgid "Tools"
-msgstr ""
+msgstr "Verktyg"
 
 msgid "Yes"
-msgstr ""
+msgstr "Ja"
 
 msgid "You must search for a package first."
-msgstr ""
+msgstr "Du måste söka efter ett paket först."
 
 msgid "package Name"
-msgstr ""
+msgstr "paketNamn"

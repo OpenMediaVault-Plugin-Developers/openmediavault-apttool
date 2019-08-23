@@ -3,82 +3,87 @@
 # This file is distributed under the same license as the openmediavault-apttool package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# Axel Cantenys, 2017
+# niko2 <nicolas@zosk.fr>, 2017
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-apttool\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-10-12 16:30-0500\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2017-10-12 21:30+0000\n"
+"Last-Translator: niko2 <nicolas@zosk.fr>, 2017\n"
 "Language-Team: French (https://www.transifex.com/openmediavault-plugin-developers/teams/1854/fr/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Language: fr\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 msgid "Add package"
-msgstr ""
+msgstr "Ajouter un paquet"
 
 msgid "Add to Packages tab"
-msgstr ""
+msgstr "Ajouter à l'onglet « Paquets »"
 
 msgid "Apt Tool"
-msgstr ""
+msgstr "Outil APT"
 
 msgid "Backports"
-msgstr ""
+msgstr "Rétroportage"
 
 msgid "Backports?"
-msgstr ""
+msgstr "Rétroportage ?"
 
 msgid "Done..."
-msgstr ""
+msgstr "Fait..."
 
 msgid "Install"
-msgstr ""
+msgstr "Installer"
 
 msgid "Installed"
-msgstr ""
+msgstr "Installé"
 
 msgid "Installing package "
-msgstr ""
+msgstr "Installation du paquet"
 
 msgid "No"
-msgstr ""
+msgstr "Non"
 
 msgid "Package Name"
-msgstr ""
+msgstr "Nom du paquet"
 
 msgid "Packages"
-msgstr ""
+msgstr "Paquets"
 
 msgid "Policy"
-msgstr ""
+msgstr "Priorité"
 
 msgid "Remove"
-msgstr ""
+msgstr "Supprimer"
 
 msgid "Removing package "
-msgstr ""
+msgstr "Suppression du paquet"
 
 msgid "Search"
-msgstr ""
+msgstr "Rechercher"
 
 msgid "Search Local"
-msgstr ""
+msgstr "Rechercher dans l'index local"
 
 msgid "Search Repositories"
-msgstr ""
+msgstr "Rechercher dans les dépôts"
 
 msgid "Tools"
-msgstr ""
+msgstr "Outils"
 
 msgid "Yes"
-msgstr ""
+msgstr "Oui"
 
 msgid "You must search for a package first."
-msgstr ""
+msgstr "Vous devez d'abord rechercher un paquet."
 
 msgid "package Name"
-msgstr ""
+msgstr "Nom du paquet"

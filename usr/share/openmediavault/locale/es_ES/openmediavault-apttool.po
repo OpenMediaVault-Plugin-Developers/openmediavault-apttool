@@ -3,82 +3,86 @@
 # This file is distributed under the same license as the openmediavault-apttool package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# Raul Fernandez Garcia <raulfg3@gmail.com>, 2017
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-apttool\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-10-12 16:30-0500\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Language-Team: Spanish (Spain) (https://www.transifex.com/openmediavault-plugin-developers/teams/1854/es_ES/)\n"
+"PO-Revision-Date: 2017-10-12 21:30+0000\n"
+"Last-Translator: Raul Fernandez Garcia <raulfg3@gmail.com>, 2017\n"
+"Language-Team: Spanish (https://www.transifex.com/openmediavault-plugin-developers/teams/1854/es/)\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: es_ES\n"
+"Language: es\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Add package"
-msgstr ""
+msgstr "Añadir paquete"
 
 msgid "Add to Packages tab"
-msgstr ""
+msgstr "Añadir a la pestaña de paquetes"
 
 msgid "Apt Tool"
-msgstr ""
+msgstr "Herramienta Apt"
 
 msgid "Backports"
-msgstr ""
+msgstr "Backports"
 
 msgid "Backports?"
-msgstr ""
+msgstr "Backports?"
 
 msgid "Done..."
-msgstr ""
+msgstr "Hecho..."
 
 msgid "Install"
-msgstr ""
+msgstr "Instalar"
 
 msgid "Installed"
-msgstr ""
+msgstr "Instalado"
 
 msgid "Installing package "
-msgstr ""
+msgstr "Instalando paquete"
 
 msgid "No"
-msgstr ""
+msgstr "No"
 
 msgid "Package Name"
-msgstr ""
+msgstr "Nombre del paquete"
 
 msgid "Packages"
-msgstr ""
+msgstr "Paquetes"
 
 msgid "Policy"
-msgstr ""
+msgstr "Política"
 
 msgid "Remove"
-msgstr ""
+msgstr "Eliminar"
 
 msgid "Removing package "
-msgstr ""
+msgstr "Eliminar paquete"
 
 msgid "Search"
-msgstr ""
+msgstr "Buscar"
 
 msgid "Search Local"
-msgstr ""
+msgstr "Busqueda local"
 
 msgid "Search Repositories"
-msgstr ""
+msgstr "Repositorios de busqueda"
 
 msgid "Tools"
-msgstr ""
+msgstr "Herramientas"
 
 msgid "Yes"
-msgstr ""
+msgstr "Si"
 
 msgid "You must search for a package first."
-msgstr ""
+msgstr "Debe buscar el paquete primero."
 
 msgid "package Name"
-msgstr ""
+msgstr "Nombre del paquete"
