@@ -1,3 +1,9 @@
+openmediavault-apttool (3.6) stable; urgency=low
+
+  * Fix backports
+
+ -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Thu, 22 Aug 2019 21:31:33 -0500
+
 openmediavault-apttool (3.5) stable; urgency=low
 
   * Add package hold tab

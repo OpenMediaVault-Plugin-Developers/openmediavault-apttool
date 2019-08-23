@@ -3,7 +3,7 @@
  * @author    Volker Theile <volker.theile@openmediavault.org>
  * @author    OpenMediaVault Plugin Developers <plugins@omv-extras.org>
  * @copyright Copyright (c) 2009-2013 Volker Theile
- * @copyright Copyright (c) 2016-2018 OpenMediaVault Plugin Developers
+ * @copyright Copyright (c) 2016-2019 OpenMediaVault Plugin Developers
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -204,9 +204,8 @@ class OMVRpcServiceAptTool extends \OMV\Rpc\ServiceAbstract
                     $cmdBin = 'apt-get';
                     $cmdArgs[] = '--yes';
                     if ($params['backports'] == 'true') {
-                        $cmdArgs[] = '-t jessie-backports';
+                        $cmdArgs[] = '-t $(lsb_release --short --codename)-backports';
                     }
-                    $cmdArgs[] = '--force-yes';
                     $cmdArgs[] = '--fix-missing';
                     $cmdArgs[] = '--allow-unauthenticated';
                     $cmdArgs[] = '--reinstall';
