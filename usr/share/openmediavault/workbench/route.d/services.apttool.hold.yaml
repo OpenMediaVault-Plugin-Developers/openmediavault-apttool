@@ -1,0 +1,6 @@
+version: "1.0"
+type: route
+data:
+  url: "/services/apttool/hold"
+  title: _("Hold")
+  component: omv-services-apttool-hold-datatable-page

@@ -1,0 +1,8 @@
+version: "1.0"
+type: navigation-item
+data:
+  path: "services.apttool.search"
+  text: _("Search")
+  position: 20
+  icon: mdi:feature-search-outline
+  url: "/services/apttool/search"

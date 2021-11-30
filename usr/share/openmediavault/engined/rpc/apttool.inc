@@ -3,7 +3,7 @@
  * @author    Volker Theile <volker.theile@openmediavault.org>
  * @author    OpenMediaVault Plugin Developers <plugins@omv-extras.org>
  * @copyright Copyright (c) 2009-2013 Volker Theile
- * @copyright Copyright (c) 2016-2019 OpenMediaVault Plugin Developers
+ * @copyright Copyright (c) 2016-2021 OpenMediaVault Plugin Developers
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -42,26 +42,19 @@ class OMVRpcServiceAptTool extends \OMV\Rpc\ServiceAbstract
     {
         // Validate the RPC caller context.
         $this->validateMethodContext($context, ['role' => OMV_ROLE_ADMINISTRATOR]);
-        // Validate the parameters of the RPC service method.
-        $this->validateMethodParams($params, 'rpc.apttool.executesearch');
+
         $results = [];
-        if (strlen($params['term']) > 1) {
-            if ($params['type'] == 'dpkg') {
-                $command = 'dpkg -l | grep';
-                $command2= '';
-            } else {
-                $command = 'apt-cache';
-                $command2 = $params['type'];
-            }
-            $cmd = new \OMV\System\Process($command, $command2, escapeshellarg($params['term']));
+        if (strlen($params['search']) > 2) {
+            $cmdArgs = [];
+            $cmdArgs[] = 'apt-cache';
+            $cmdArgs[] = 'search';
+            $cmdArgs[] = escapeshellarg($params['search']);
+            $cmdArgs[] = ' | head -n 500';
+            $cmd = new \OMV\System\Process($cmdArgs);
             $cmd->setQuiet(true);
             $cmd->execute($output);
 
-            if (empty($output)) {
-                $results[] = [
-                    'packagename' => gettext('No results found.')
-                ];
-            } else {
+            if (!empty($output)) {
                 foreach ($output as $line) {
                     if (empty($line))
                         continue;
@@ -79,7 +72,7 @@ class OMVRpcServiceAptTool extends \OMV\Rpc\ServiceAbstract
         }
         // Filter the result.
         return $this->applyFilter($results, $params['start'], $params['limit'],
-            $params['sortfield'], $params['sortdir']);
+            $params['sortfield'], $params['sortdir'], $params['search']);
     }
 
     public function getPackageList($params, $context)

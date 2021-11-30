@@ -1,0 +1,8 @@
+version: "1.0"
+type: navigation-item
+data:
+  path: "services.apttool.packages"
+  text: _("Packages")
+  position: 10
+  icon: mdi:package-variant-closed
+  url: "/services/apttool/packages"

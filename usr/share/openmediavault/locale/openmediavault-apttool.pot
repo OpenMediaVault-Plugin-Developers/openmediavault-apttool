@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-apttool\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-10-12 16:30-0500\n"
+"POT-Creation-Date: 2021-11-30 13:33-0600\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=CHARSET\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-msgid "Add package"
+msgid "Add new package"
 msgstr ""
 
 msgid "Add to Packages tab"
@@ -29,10 +29,10 @@ msgstr ""
 msgid "Backports"
 msgstr ""
 
-msgid "Backports?"
+msgid "Hold"
 msgstr ""
 
-msgid "Done..."
+msgid "Holding package"
 msgstr ""
 
 msgid "Install"
@@ -41,44 +41,41 @@ msgstr ""
 msgid "Installed"
 msgstr ""
 
-msgid "Installing package "
+msgid "Installing package"
 msgstr ""
 
 msgid "No"
 msgstr ""
 
+msgid "None found."
+msgstr ""
+
 msgid "Package Name"
+msgstr ""
+
+msgid "Package name"
 msgstr ""
 
 msgid "Packages"
 msgstr ""
 
-msgid "Policy"
-msgstr ""
-
 msgid "Remove"
 msgstr ""
 
-msgid "Removing package "
+msgid "Removing package"
 msgstr ""
 
 msgid "Search"
 msgstr ""
 
-msgid "Search Local"
-msgstr ""
-
-msgid "Search Repositories"
-msgstr ""
-
 msgid "Tools"
 msgstr ""
 
+msgid "Unhold"
+msgstr ""
+
+msgid "Unholding package ..."
+msgstr ""
+
 msgid "Yes"
-msgstr ""
-
-msgid "You must search for a package first."
-msgstr ""
-
-msgid "package Name"
 msgstr ""

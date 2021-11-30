@@ -1,0 +1,6 @@
+version: "1.0"
+type: route
+data:
+  url: "/services/apttool"
+  title: _("Apt Tool")
+  component: omv-services-apttool-navigation-page

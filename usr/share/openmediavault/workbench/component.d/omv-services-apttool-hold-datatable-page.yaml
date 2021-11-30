@@ -1,0 +1,18 @@
+version: "1.0"
+type: component
+data:
+  name: omv-services-apttool-hold-datatable-page
+  type: datatablePage
+  config:
+    autoReload: false
+    hasSearchField: true
+    stateId: ed1de466-5205-11ec-9937-5b9be94324e0
+    store:
+      proxy:
+        service: AptTool
+        get:
+          method: getHoldList
+    columns:
+      - name: _("Package Name")
+        prop: package
+        sortable: true

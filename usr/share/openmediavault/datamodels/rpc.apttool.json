@@ -1,35 +1,5 @@
 [{
 	"type": "rpc",
-	"id": "rpc.apttool.executesearch",
-	"params": {
-		"type": "object",
-		"properties": {
-			"start": {
-				"type": "integer",
-				"required": true
-			},
-			"limit": {
-				"type": [ "integer", "null" ],
-				"required": true
-			},
-			"sortfield": {
-				"type": [ "string", "null" ]
-			},
-			"sortdir": {
-				"type": [ "string", "null" ],
-				"enum": [ "asc", "ASC", "desc", "DESC" ]
-			},
-			"term": {
-				"type": "string"
-			},
-			"type": {
-				"type": "string",
-				"enum": [ "dpkg", "policy", "search" ]
-			}
-		}
-	}
-},{
-	"type": "rpc",
 	"id": "rpc.apttool.setpackage",
 	"params": {
 		"type": "object",

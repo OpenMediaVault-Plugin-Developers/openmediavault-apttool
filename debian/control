@@ -3,13 +3,12 @@ Section: net
 XB-Plugin-Section: utilities
 Priority: optional
 Maintainer: OpenMediaVault Plugin Developers <plugins@omv-extras.org>
-Build-Depends: debhelper (>= 9.0.0)
-Standards-Version: 3.9.6
+Build-Depends: debhelper (>= 12)
+Standards-Version: 4.3.0
 Homepage: http://omv-extras.org/
 
 Package: openmediavault-apttool
 Architecture: all
-Depends: openmediavault (>= 3.0.67)
+Depends: openmediavault (>= 6)
 Description: apt tool plugin for OpenMediaVault.
  Find, install, and remove packages in apt repositories.
- Export and import list of packages.

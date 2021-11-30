@@ -1,0 +1,6 @@
+version: "1.0"
+type: route
+data:
+  url: "/services/apttool/packages"
+  title: _("Packages")
+  component: omv-services-apttool-packages-datatable-page

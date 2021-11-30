@@ -1,0 +1,37 @@
+version: "1.0"
+type: component
+data:
+  name: omv-services-apttool-search-datatable-page
+  type: datatablePage
+  config:
+    autoReload: false
+    hasSearchField: true
+    remoteSearching: true
+    stateId: 8dc12e6e-5206-11ec-a561-5b80f9e10a83
+    store:
+      proxy:
+        service: AptTool
+        get:
+          method: executeSearch
+    columns:
+      - name: _("Package Name")
+        prop: packagename
+        sortable: true
+        flexGrow: 5
+    actions:
+      - type: iconButton
+        tooltip: _("Add to Packages tab")
+        icon: mdi:plus
+        enabledConstraints:
+          minSelected: 1
+          maxSelected: 1
+        execute:
+          type: request
+          request:
+            service: AptTool
+            method: setPackage
+            params:
+              uuid: "{{ newconfobjuuid }}"
+              packagename: "{{ _selected[0].packagename | split(' ') | first }}"
+              backports: false
+            task: false
