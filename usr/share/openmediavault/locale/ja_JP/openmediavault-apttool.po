@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-apttool\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-10-12 16:30-0500\n"
+"POT-Creation-Date: 2021-11-30 13:33-0600\n"
 "PO-Revision-Date: 2017-10-12 21:30+0000\n"
 "Last-Translator: Toshihiro Kan <kansuke4649@gmail.com>, 2017\n"
 "Language-Team: Japanese (Japan) (https://www.transifex.com/openmediavault-plugin-developers/teams/1854/ja_JP/)\n"
@@ -21,8 +21,8 @@ msgstr ""
 "Language: ja_JP\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-msgid "Add package"
-msgstr "パッケージを追加"
+msgid "Add new package"
+msgstr ""
 
 msgid "Add to Packages tab"
 msgstr "パッケージタブを追加"
@@ -33,11 +33,11 @@ msgstr "APTツール"
 msgid "Backports"
 msgstr "バックポート"
 
-msgid "Backports?"
-msgstr "バックポート？"
+msgid "Hold"
+msgstr ""
 
-msgid "Done..."
-msgstr "完了..."
+msgid "Holding package"
+msgstr ""
 
 msgid "Install"
 msgstr "インストール"
@@ -45,44 +45,41 @@ msgstr "インストール"
 msgid "Installed"
 msgstr "インストール済み"
 
-msgid "Installing package "
-msgstr "パッケージのインストール"
+msgid "Installing package"
+msgstr ""
 
 msgid "No"
 msgstr "いいえ"
 
+msgid "None found."
+msgstr ""
+
 msgid "Package Name"
 msgstr "パッケージ名"
+
+msgid "Package name"
+msgstr ""
 
 msgid "Packages"
 msgstr "パッケージ"
 
-msgid "Policy"
-msgstr "ポリシー"
-
 msgid "Remove"
 msgstr "削除"
 
-msgid "Removing package "
-msgstr "パッケージを削除中"
+msgid "Removing package"
+msgstr ""
 
 msgid "Search"
 msgstr "検索"
 
-msgid "Search Local"
-msgstr "ローカルを検索"
-
-msgid "Search Repositories"
-msgstr "リポジトリを検索"
-
 msgid "Tools"
 msgstr "ツール"
 
+msgid "Unhold"
+msgstr ""
+
+msgid "Unholding package ..."
+msgstr ""
+
 msgid "Yes"
 msgstr "はい"
-
-msgid "You must search for a package first."
-msgstr "最初にパッケージを検索する必要があります。"
-
-msgid "package Name"
-msgstr "パッケージ名"

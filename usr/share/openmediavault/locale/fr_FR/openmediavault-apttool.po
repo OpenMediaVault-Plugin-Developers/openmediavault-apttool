@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-apttool\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-10-12 16:30-0500\n"
+"POT-Creation-Date: 2021-11-30 13:33-0600\n"
 "PO-Revision-Date: 2017-10-12 21:30+0000\n"
 "Last-Translator: niko2 <nicolas@zosk.fr>, 2017\n"
 "Language-Team: French (https://www.transifex.com/openmediavault-plugin-developers/teams/1854/fr/)\n"
@@ -22,8 +22,8 @@ msgstr ""
 "Language: fr\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
-msgid "Add package"
-msgstr "Ajouter un paquet"
+msgid "Add new package"
+msgstr ""
 
 msgid "Add to Packages tab"
 msgstr "Ajouter à l'onglet « Paquets »"
@@ -34,11 +34,11 @@ msgstr "Outil APT"
 msgid "Backports"
 msgstr "Rétroportage"
 
-msgid "Backports?"
-msgstr "Rétroportage ?"
+msgid "Hold"
+msgstr ""
 
-msgid "Done..."
-msgstr "Fait..."
+msgid "Holding package"
+msgstr ""
 
 msgid "Install"
 msgstr "Installer"
@@ -46,44 +46,41 @@ msgstr "Installer"
 msgid "Installed"
 msgstr "Installé"
 
-msgid "Installing package "
-msgstr "Installation du paquet"
+msgid "Installing package"
+msgstr ""
 
 msgid "No"
 msgstr "Non"
 
+msgid "None found."
+msgstr ""
+
 msgid "Package Name"
 msgstr "Nom du paquet"
+
+msgid "Package name"
+msgstr ""
 
 msgid "Packages"
 msgstr "Paquets"
 
-msgid "Policy"
-msgstr "Priorité"
-
 msgid "Remove"
 msgstr "Supprimer"
 
-msgid "Removing package "
-msgstr "Suppression du paquet"
+msgid "Removing package"
+msgstr ""
 
 msgid "Search"
 msgstr "Rechercher"
 
-msgid "Search Local"
-msgstr "Rechercher dans l'index local"
-
-msgid "Search Repositories"
-msgstr "Rechercher dans les dépôts"
-
 msgid "Tools"
 msgstr "Outils"
 
+msgid "Unhold"
+msgstr ""
+
+msgid "Unholding package ..."
+msgstr ""
+
 msgid "Yes"
 msgstr "Oui"
-
-msgid "You must search for a package first."
-msgstr "Vous devez d'abord rechercher un paquet."
-
-msgid "package Name"
-msgstr "Nom du paquet"

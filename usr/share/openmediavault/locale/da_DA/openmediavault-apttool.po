@@ -11,7 +11,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-apttool\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-10-12 16:30-0500\n"
+"POT-Creation-Date: 2021-11-30 13:33-0600\n"
 "PO-Revision-Date: 2017-10-12 21:30+0000\n"
 "Last-Translator: Stefan Thrane Overby <stoverby@gmail.com>, 2017\n"
 "Language-Team: Danish (https://www.transifex.com/openmediavault-plugin-developers/teams/1854/da/)\n"
@@ -21,8 +21,8 @@ msgstr ""
 "Language: da\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-msgid "Add package"
-msgstr "Tilføj pakke"
+msgid "Add new package"
+msgstr ""
 
 msgid "Add to Packages tab"
 msgstr "Tilføj til Pakke fane"
@@ -33,11 +33,11 @@ msgstr "Apt Værktøj"
 msgid "Backports"
 msgstr "Backporte"
 
-msgid "Backports?"
-msgstr "Backporte? "
+msgid "Hold"
+msgstr ""
 
-msgid "Done..."
-msgstr "Færdig... "
+msgid "Holding package"
+msgstr ""
 
 msgid "Install"
 msgstr "Installer"
@@ -45,44 +45,41 @@ msgstr "Installer"
 msgid "Installed"
 msgstr "Installeret"
 
-msgid "Installing package "
-msgstr "Installer pakke"
+msgid "Installing package"
+msgstr ""
 
 msgid "No"
 msgstr "Nej"
 
+msgid "None found."
+msgstr ""
+
 msgid "Package Name"
 msgstr "Pakke Navn"
+
+msgid "Package name"
+msgstr ""
 
 msgid "Packages"
 msgstr "Pakker"
 
-msgid "Policy"
-msgstr "Politik"
-
 msgid "Remove"
 msgstr "Fjern"
 
-msgid "Removing package "
-msgstr "Fjerner pakke"
+msgid "Removing package"
+msgstr ""
 
 msgid "Search"
 msgstr "Søg"
 
-msgid "Search Local"
-msgstr "Søg Lokal"
-
-msgid "Search Repositories"
-msgstr "Søg Arkiver"
-
 msgid "Tools"
 msgstr "Værktøjer"
 
+msgid "Unhold"
+msgstr ""
+
+msgid "Unholding package ..."
+msgstr ""
+
 msgid "Yes"
 msgstr "Ja"
-
-msgid "You must search for a package first."
-msgstr "Du skal først søge efter en pakke. "
-
-msgid "package Name"
-msgstr "Pakkenavn"

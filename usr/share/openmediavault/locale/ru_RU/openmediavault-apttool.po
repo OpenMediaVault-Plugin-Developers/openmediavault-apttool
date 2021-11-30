@@ -12,7 +12,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-apttool\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-10-12 16:30-0500\n"
+"POT-Creation-Date: 2021-11-30 13:33-0600\n"
 "PO-Revision-Date: 2017-10-12 21:30+0000\n"
 "Last-Translator: Дмитрий <bardimnik@rambler.ru>, 2018\n"
 "Language-Team: Russian (https://www.transifex.com/openmediavault-plugin-developers/teams/1854/ru/)\n"
@@ -22,8 +22,8 @@ msgstr ""
 "Language: ru\n"
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n%100>=11 && n%100<=14)? 2 : 3);\n"
 
-msgid "Add package"
-msgstr "Добавить пакет"
+msgid "Add new package"
+msgstr ""
 
 msgid "Add to Packages tab"
 msgstr "Добавить пакет в закладки"
@@ -34,11 +34,11 @@ msgstr "Инструмент Apt"
 msgid "Backports"
 msgstr "Портирование"
 
-msgid "Backports?"
-msgstr "Портирован?"
+msgid "Hold"
+msgstr ""
 
-msgid "Done..."
-msgstr "Готово..."
+msgid "Holding package"
+msgstr ""
 
 msgid "Install"
 msgstr "Установить"
@@ -46,44 +46,41 @@ msgstr "Установить"
 msgid "Installed"
 msgstr "Установлен"
 
-msgid "Installing package "
-msgstr "Установка пакета"
+msgid "Installing package"
+msgstr ""
 
 msgid "No"
 msgstr "Нет"
 
+msgid "None found."
+msgstr ""
+
 msgid "Package Name"
 msgstr "Имя пакета"
+
+msgid "Package name"
+msgstr ""
 
 msgid "Packages"
 msgstr "Пакеты"
 
-msgid "Policy"
-msgstr "Политика"
-
 msgid "Remove"
 msgstr "Удалить"
 
-msgid "Removing package "
-msgstr "Удаление пакета"
+msgid "Removing package"
+msgstr ""
 
 msgid "Search"
 msgstr "Поиск"
 
-msgid "Search Local"
-msgstr "Местный поиск"
-
-msgid "Search Repositories"
-msgstr "Поиск репозиториев"
-
 msgid "Tools"
 msgstr "Инструменты"
 
+msgid "Unhold"
+msgstr ""
+
+msgid "Unholding package ..."
+msgstr ""
+
 msgid "Yes"
 msgstr "Да"
-
-msgid "You must search for a package first."
-msgstr "Сначала вы должны найти пакет."
-
-msgid "package Name"
-msgstr "Имя пакета"
