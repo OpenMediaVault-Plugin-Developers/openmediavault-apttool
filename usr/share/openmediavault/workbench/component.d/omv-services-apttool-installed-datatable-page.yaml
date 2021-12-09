@@ -1,0 +1,51 @@
+version: "1.0"
+type: component
+data:
+  name: omv-services-apttool-installed-datatable-page
+  type: datatablePage
+  config:
+    autoReload: false
+    hasSearchField: true
+    stateId: 1a7e283e-593c-11ec-a4d1-072a82aefcde
+    store:
+      proxy:
+        service: AptTool
+        get:
+          method: getInstalledList
+    columns:
+      - name: _("Status")
+        prop: status
+        sortable: true
+        flexGrow: 1
+      - name: _("Name")
+        prop: name
+        sortable: true
+        flexGrow: 2
+      - name: _("Version")
+        prop: version
+        sortable: true
+        flexGrow: 1
+      - name: _("Description")
+        prop: description
+        sortable: true
+        flexGrow: 4
+    actions:
+      - type: iconButton
+        tooltip: _("Remove")
+        icon: mdi:card-remove-outline
+        enabledConstraints:
+          minSelected: 1
+          maxSelected: 1
+        execute:
+          type: taskDialog
+          taskDialog:
+            config:
+              title: _("Removing package")
+              startOnInit: false
+              request:
+                service: AptTool
+                method: doCommand
+                params:
+                  command: remove
+                  packagename: "{{ _selected[0].name }}"
+                  backports: ""

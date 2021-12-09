@@ -35,6 +35,7 @@ class OMVRpcServiceAptTool extends \OMV\Rpc\ServiceAbstract
         $this->registerMethod('setPackage');
         $this->registerMethod('deletePackage');
         $this->registerMethod('getHoldList');
+        $this->registerMethod('getInstalledList');
         $this->registerMethod('doCommand');
     }
 
@@ -176,6 +177,35 @@ class OMVRpcServiceAptTool extends \OMV\Rpc\ServiceAbstract
         }
         if (empty($packages)) {
             $packages[] = [ 'package' => gettext("None found.") ];
+        }
+        return $this->applyFilter($packages, $params['start'], $params['limit'],
+            $params['sortfield'], $params['sortdir']);
+    }
+
+    public function getInstalledList($params, $context)
+    {
+        // Validate the RPC caller context.
+        $this->validateMethodContext($context, ['role' => OMV_ROLE_ADMINISTRATOR]);
+        // Validate the parameters of the RPC service method.
+        $this->validateMethodParams($params, 'rpc.common.getlist');
+        // Get the output of apt-mark showhold
+        $cmdArgs = [];
+        $cmdArgs[] = "--show";
+        $cmdArgs[] = "--showformat='\${db:Status-Abbrev}|\${binary:Package}|\${Version}|\${binary:Summary}\n'";
+        $cmd = new \OMV\System\Process('dpkg-query', $cmdArgs);
+        $cmd->execute($output);
+        $packages = [];
+        foreach ($output as $package) {
+            if (empty($package))
+                continue;
+            $pkg = [];
+            $pkg = explode('|', $package);
+            $packages[] = [
+                'status' => $pkg[0],
+                'name' => $pkg[1],
+                'version' => $pkg[2],
+                'description' => $pkg[3]
+            ];
         }
         return $this->applyFilter($packages, $params['start'], $params['limit'],
             $params['sortfield'], $params['sortdir']);

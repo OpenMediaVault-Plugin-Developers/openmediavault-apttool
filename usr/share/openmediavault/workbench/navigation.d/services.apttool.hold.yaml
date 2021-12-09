@@ -3,6 +3,6 @@ type: navigation-item
 data:
   path: "services.apttool.hold"
   text: _("Hold")
-  position: 30
+  position: 40
   icon: mdi:lock-outline
   url: "/services/apttool/hold"

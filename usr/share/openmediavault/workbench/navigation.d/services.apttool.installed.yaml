@@ -1,0 +1,8 @@
+version: "1.0"
+type: navigation-item
+data:
+  path: "services.apttool.installed"
+  text: _("Installed")
+  position: 30
+  icon: mdi:format-list-bulleted
+  url: "/services/apttool/installed"
