@@ -1,3 +1,9 @@
+openmediavault-apttool (7.1) stable; urgency=low
+
+  * Add dependency checking to prevent removing OMV dependencies
+
+ -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Thu, 30 May 2024 12:08:47 -0500
+
 openmediavault-apttool (7.0) stable; urgency=low
 
   * Update for OMV 7.x
