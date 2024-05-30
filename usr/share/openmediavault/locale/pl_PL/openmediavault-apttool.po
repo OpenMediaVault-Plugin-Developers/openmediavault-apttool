@@ -3,14 +3,18 @@
 # This file is distributed under the same license as the openmediavault-apttool package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# Rysiek Jurczy, 2023
+# 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-apttool\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-30 13:33-0600\n"
+"POT-Creation-Date: 2024-05-30 12:08-0500\n"
 "PO-Revision-Date: 2017-10-12 21:30+0000\n"
-"Language-Team: Polish (Poland) (https://www.transifex.com/openmediavault-plugin-developers/teams/1854/pl_PL/)\n"
+"Last-Translator: Rysiek Jurczy, 2023\n"
+"Language-Team: Polish (Poland) (https://app.transifex.com/openmediavault-plugin-developers/teams/1854/pl_PL/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -18,64 +22,85 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n==1 ? 0 : (n%10>=2 && n%10<=4) && (n%100<12 || n%100>14) ? 1 : n!=1 && (n%10>=0 && n%10<=1) || (n%10>=5 && n%10<=9) || (n%100>=12 && n%100<=14) ? 2 : 3);\n"
 
 msgid "Add new package"
-msgstr ""
+msgstr "Dodaj nową paczkę"
 
 msgid "Add to Packages tab"
-msgstr ""
+msgstr "Dodaj pakiety do zakładki"
 
 msgid "Apt Tool"
-msgstr ""
+msgstr "Narzędzie Apt"
 
 msgid "Backports"
+msgstr "Backports"
+
+msgid "Description"
 msgstr ""
 
 msgid "Hold"
-msgstr ""
+msgstr "Blokada"
 
 msgid "Holding package"
-msgstr ""
+msgstr "Wstrzymany pakiet"
 
 msgid "Install"
-msgstr ""
+msgstr "Instaluj"
 
 msgid "Installed"
-msgstr ""
+msgstr "Zainstalowany"
 
 msgid "Installing package"
+msgstr "Instalowanie pakietu"
+
+msgid "Name"
 msgstr ""
 
 msgid "No"
-msgstr ""
+msgstr "Nie"
 
 msgid "None found."
+msgstr "Nie znalezione."
+
+msgid "OMV dependency"
 msgstr ""
 
 msgid "Package Name"
-msgstr ""
+msgstr "Nazwa pakietu"
 
 msgid "Package name"
-msgstr ""
+msgstr "Nazwa pakietu"
 
 msgid "Packages"
-msgstr ""
+msgstr "Pakiety"
 
 msgid "Remove"
-msgstr ""
+msgstr "Usuń"
 
 msgid "Removing package"
-msgstr ""
+msgstr "Usuwanie pakietu"
 
 msgid "Search"
+msgstr "Szukaj"
+
+msgid "Status"
 msgstr ""
 
 msgid "Tools"
-msgstr ""
+msgstr "Narzędzia"
 
 msgid "Unhold"
-msgstr ""
+msgstr "Odblokuj"
 
 msgid "Unholding package ..."
+msgstr "Odblokowany pakiet ..."
+
+msgid "Version"
 msgstr ""
 
 msgid "Yes"
+msgstr "Tak"
+
+msgid "openmediavault dependencies cannot be removed!"
+msgstr ""
+
+msgid "openmediavault packages cannot be added."
 msgstr ""

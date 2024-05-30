@@ -8,9 +8,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-apttool\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-30 13:33-0600\n"
+"POT-Creation-Date: 2024-05-30 12:08-0500\n"
 "PO-Revision-Date: 2017-10-12 21:30+0000\n"
-"Language-Team: Turkish (https://www.transifex.com/openmediavault-plugin-developers/teams/1854/tr/)\n"
+"Language-Team: Turkish (https://app.transifex.com/openmediavault-plugin-developers/teams/1854/tr/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -29,6 +29,9 @@ msgstr ""
 msgid "Backports"
 msgstr ""
 
+msgid "Description"
+msgstr ""
+
 msgid "Hold"
 msgstr ""
 
@@ -44,10 +47,16 @@ msgstr ""
 msgid "Installing package"
 msgstr ""
 
+msgid "Name"
+msgstr ""
+
 msgid "No"
 msgstr ""
 
 msgid "None found."
+msgstr ""
+
+msgid "OMV dependency"
 msgstr ""
 
 msgid "Package Name"
@@ -68,6 +77,9 @@ msgstr ""
 msgid "Search"
 msgstr ""
 
+msgid "Status"
+msgstr ""
+
 msgid "Tools"
 msgstr ""
 
@@ -77,5 +89,14 @@ msgstr ""
 msgid "Unholding package ..."
 msgstr ""
 
+msgid "Version"
+msgstr ""
+
 msgid "Yes"
+msgstr ""
+
+msgid "openmediavault dependencies cannot be removed!"
+msgstr ""
+
+msgid "openmediavault packages cannot be added."
 msgstr ""

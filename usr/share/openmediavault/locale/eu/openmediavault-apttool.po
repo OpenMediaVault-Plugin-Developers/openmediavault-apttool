@@ -3,9 +3,6 @@
 # This file is distributed under the same license as the openmediavault-apttool package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
-# Translators:
-# Miguel Anxo Bouzada <mbouzada@gmail.com>, 2020
-# 
 #, fuzzy
 msgid ""
 msgstr ""
@@ -13,25 +10,24 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-30 12:08-0500\n"
 "PO-Revision-Date: 2017-10-12 21:30+0000\n"
-"Last-Translator: Miguel Anxo Bouzada <mbouzada@gmail.com>, 2020\n"
-"Language-Team: Galician (https://app.transifex.com/openmediavault-plugin-developers/teams/1854/gl/)\n"
+"Language-Team: Basque (https://app.transifex.com/openmediavault-plugin-developers/teams/1854/eu/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: gl\n"
+"Language: eu\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Add new package"
 msgstr ""
 
 msgid "Add to Packages tab"
-msgstr "Engadir á lapela de paquetes"
+msgstr ""
 
 msgid "Apt Tool"
-msgstr "Ferramenta «apt»"
+msgstr ""
 
 msgid "Backports"
-msgstr "Backports"
+msgstr ""
 
 msgid "Description"
 msgstr ""
@@ -43,10 +39,10 @@ msgid "Holding package"
 msgstr ""
 
 msgid "Install"
-msgstr "Instalar"
+msgstr ""
 
 msgid "Installed"
-msgstr "Instalado"
+msgstr ""
 
 msgid "Installing package"
 msgstr ""
@@ -55,7 +51,7 @@ msgid "Name"
 msgstr ""
 
 msgid "No"
-msgstr "Non"
+msgstr ""
 
 msgid "None found."
 msgstr ""
@@ -64,28 +60,28 @@ msgid "OMV dependency"
 msgstr ""
 
 msgid "Package Name"
-msgstr "Nome do paquete"
+msgstr ""
 
 msgid "Package name"
 msgstr ""
 
 msgid "Packages"
-msgstr "Paquetes"
+msgstr ""
 
 msgid "Remove"
-msgstr "Retirar"
+msgstr ""
 
 msgid "Removing package"
 msgstr ""
 
 msgid "Search"
-msgstr "Buscar"
+msgstr ""
 
 msgid "Status"
 msgstr ""
 
 msgid "Tools"
-msgstr "Ferramentas"
+msgstr ""
 
 msgid "Unhold"
 msgstr ""
@@ -97,7 +93,7 @@ msgid "Version"
 msgstr ""
 
 msgid "Yes"
-msgstr "Si"
+msgstr ""
 
 msgid "openmediavault dependencies cannot be removed!"
 msgstr ""

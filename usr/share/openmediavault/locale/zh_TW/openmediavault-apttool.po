@@ -4,17 +4,17 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# kochin <kochinc@outlook.com>, 2017
+# kochin <kochinc@outlook.com>, 2021
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-apttool\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-30 13:33-0600\n"
+"POT-Creation-Date: 2024-05-30 12:08-0500\n"
 "PO-Revision-Date: 2017-10-12 21:30+0000\n"
-"Last-Translator: kochin <kochinc@outlook.com>, 2017\n"
-"Language-Team: Chinese (Taiwan) (https://www.transifex.com/openmediavault-plugin-developers/teams/1854/zh_TW/)\n"
+"Last-Translator: kochin <kochinc@outlook.com>, 2021\n"
+"Language-Team: Chinese (Taiwan) (https://app.transifex.com/openmediavault-plugin-developers/teams/1854/zh_TW/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -22,7 +22,7 @@ msgstr ""
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 msgid "Add new package"
-msgstr ""
+msgstr "加入新套件"
 
 msgid "Add to Packages tab"
 msgstr "加到套件分頁"
@@ -33,11 +33,14 @@ msgstr "Apt 工具"
 msgid "Backports"
 msgstr "反向移植"
 
-msgid "Hold"
+msgid "Description"
 msgstr ""
 
+msgid "Hold"
+msgstr "保持"
+
 msgid "Holding package"
-msgstr ""
+msgstr "保持套件中"
 
 msgid "Install"
 msgstr "安裝"
@@ -46,19 +49,25 @@ msgid "Installed"
 msgstr "已安裝"
 
 msgid "Installing package"
+msgstr "安裝套件中"
+
+msgid "Name"
 msgstr ""
 
 msgid "No"
 msgstr "否"
 
 msgid "None found."
+msgstr "未找到。"
+
+msgid "OMV dependency"
 msgstr ""
 
 msgid "Package Name"
 msgstr "套件名稱"
 
 msgid "Package name"
-msgstr ""
+msgstr "套件名稱"
 
 msgid "Packages"
 msgstr "套件"
@@ -67,19 +76,31 @@ msgid "Remove"
 msgstr "移除"
 
 msgid "Removing package"
-msgstr ""
+msgstr "移除套件中"
 
 msgid "Search"
 msgstr "搜尋"
+
+msgid "Status"
+msgstr ""
 
 msgid "Tools"
 msgstr "工具"
 
 msgid "Unhold"
-msgstr ""
+msgstr "解除保持"
 
 msgid "Unholding package ..."
+msgstr "解除保持套件中 ..."
+
+msgid "Version"
 msgstr ""
 
 msgid "Yes"
 msgstr "是"
+
+msgid "openmediavault dependencies cannot be removed!"
+msgstr ""
+
+msgid "openmediavault packages cannot be added."
+msgstr ""
