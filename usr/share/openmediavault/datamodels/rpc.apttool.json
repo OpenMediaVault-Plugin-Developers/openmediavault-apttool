@@ -13,6 +13,10 @@
 				"type": "string",
 				"required": true
 			},
+			"dependency": {
+				"type": "boolean",
+				"required": true
+			},
 			"backports": {
 				"type": "boolean",
 				"required": true

@@ -16,6 +16,10 @@
 			"type": "string",
 			"default": ""
 		},
+		"dependency": {
+			"type": "boolean",
+			"default": false
+		},
 		"backports": {
 			"type": "boolean",
 			"default": false

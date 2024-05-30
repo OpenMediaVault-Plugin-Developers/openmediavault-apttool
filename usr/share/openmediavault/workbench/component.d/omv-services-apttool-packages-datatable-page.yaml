@@ -30,6 +30,11 @@ data:
         prop: hold
         flexGrow: 1
         sortable: true
+      - name: _("OMV dependency")
+        prop: dependency
+        flexGrow: 1
+        sortable: true
+        cellTemplateName: checkIcon
     actions:
       - type: iconButton
         icon: mdi:plus
@@ -90,6 +95,13 @@ data:
                       backports: "{{ _selected[0].backports }}"
           - text: _("Remove")
             icon: mdi:minus
+            enabledConstraints:
+              minSelected: 1
+              maxSelected: 1
+              constraint:
+                - operator: falsy
+                  arg0:
+                    prop: dependency
             execute:
               type: taskDialog
               taskDialog:

@@ -39,6 +39,26 @@ class OMVRpcServiceAptTool extends \OMV\Rpc\ServiceAbstract
         $this->registerMethod('doCommand');
     }
 
+    private function isOmvDependency($pn)
+    {
+        $depend = false;
+        $pne = explode(':', $pn)[0];
+        // check if openmediavault is a dependency
+        $cmdArgs = [];
+        $cmdArgs[] = 'apt-cache';
+        $cmdArgs[] = 'depends';
+        $cmdArgs[] = '--recurse';
+        $cmdArgs[] = 'openmediavault';
+        $cmdArgs[] = sprintf(' | grep -Ec "^  Depends: %s$"', $pne, $pne);
+        $cmd = new \OMV\System\Process($cmdArgs);
+        $cmd->setQuiet(true);
+        $cmd->execute($output);
+        if (intval($output[0]) > 0) {
+            $depend = true;
+        }
+        return ($depend);
+    }
+
     public function executeSearch($params, $context)
     {
         // Validate the RPC caller context.
@@ -129,8 +149,15 @@ class OMVRpcServiceAptTool extends \OMV\Rpc\ServiceAbstract
     {
         // Validate the RPC caller context.
         $this->validateMethodContext($context, ['role' => OMV_ROLE_ADMINISTRATOR]);
+        // determine if package is omv dependency
+        $pn = $params['packagename'];
+        $params['dependency'] = $this->isOmvDependency($pn);
         // Validate the parameters of the RPC service method.
         $this->validateMethodParams($params, 'rpc.apttool.setpackage');
+        // throw error if openmediavault in package name
+        if (str_contains($pn, 'openmediavault')) {
+            throw new \OMV\ExecException(gettext("openmediavault packages cannot be added."));
+        }
         // Prepare the configuration object.
         $object = new \OMV\Config\ConfigObject('conf.service.apttool');
         $object->setAssoc($params);
@@ -234,6 +261,11 @@ class OMVRpcServiceAptTool extends \OMV\Rpc\ServiceAbstract
                     $cmdArgs[] = '--reinstall';
                     break;
                 case 'remove':
+                    if ($this->isOmvDependency($params['packagename'])) {
+                        $msg = gettext("openmediavault dependencies cannot be removed!");
+                        file_put_contents($bgOutputFilename, $msg . PHP_EOL, FILE_APPEND);
+                        return $msg;
+                    }
                     $cmdBin = 'apt-get';
                     $cmdArgs[] = '--yes';
                     $cmdArgs[] = '--auto-remove';
