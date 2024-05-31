@@ -45,11 +45,13 @@ class OMVRpcServiceAptTool extends \OMV\Rpc\ServiceAbstract
         $pne = explode(':', $pn)[0];
         // check if openmediavault is a dependency
         $cmdArgs = [];
-        $cmdArgs[] = 'apt-cache';
-        $cmdArgs[] = 'depends';
-        $cmdArgs[] = '--recurse';
-        $cmdArgs[] = 'openmediavault';
-        $cmdArgs[] = sprintf(' | grep -Ec "^  Depends: %s$"', $pne, $pne);
+        $cmdArgs[] = 'apt-get';
+        $cmdArgs[] = 'remove';
+        $cmdArgs[] = '--purge';
+        $cmdArgs[] = '--yes';
+        $cmdArgs[] = '--simulate';
+        $cmdArgs[] = sprintf('"%s"', $pne);
+        $cmdArgs[] = ' | grep -c "Purg openmediavault "';
         $cmd = new \OMV\System\Process($cmdArgs);
         $cmd->setQuiet(true);
         $cmd->execute($output);

@@ -28,7 +28,7 @@ xpath="/config/services/apttool/packages/package"
 xmlstarlet sel -t -m "${xpath}" -v "uuid" -n ${OMV_CONFIG_FILE} |
   xmlstarlet unesc |
   while read uuid; do
-    if ! omv_config_exists "${xpath}[uuid='${uuid}']/dependency"; then
+    if omv_config_exists "${xpath}[uuid='${uuid}']/dependency"; then
       pn=$(omv_config_get "${xpath}[uuid='${uuid}']/packagename")
       echo "Checking ${pn} ..."
       if [ $(apt-get remove --purge --yes --simulate "${pn}" | grep -c 'Purg openmediavault ') -eq 0 ]; then
@@ -36,7 +36,7 @@ xmlstarlet sel -t -m "${xpath}" -v "uuid" -n ${OMV_CONFIG_FILE} |
       else
         depend=1
       fi
-      omv_config_add_key "${xpath}[uuid='${uuid}']" "dependency" ${depend}
+      omv_config_update "${xpath}[uuid='${uuid}']/dependency" ${depend}
     fi
   done;
 
