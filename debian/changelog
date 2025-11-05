@@ -1,3 +1,9 @@
+openmediavault-apttool (8.0) stable; urgency=low
+
+  * Update for omv 8.x
+
+ -- OpenMediaVault Plugin Developers <plugins@omv-extras.org>  Wed, 05 Nov 2025 23:35:57 +0000
+
 openmediavault-apttool (7.1.1) stable; urgency=low
 
   * Improve dependency checking
