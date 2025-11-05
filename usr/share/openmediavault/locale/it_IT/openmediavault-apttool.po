@@ -5,6 +5,7 @@
 # 
 # Translators:
 # Paolo Velati <paolo.velati@gmail.com>, 2017
+# Giovanni Scafora <scafora.giovanni@gmail.com>, 2025
 # 
 #, fuzzy
 msgid ""
@@ -13,7 +14,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-30 12:08-0500\n"
 "PO-Revision-Date: 2017-10-12 21:30+0000\n"
-"Last-Translator: Paolo Velati <paolo.velati@gmail.com>, 2017\n"
+"Last-Translator: Giovanni Scafora <scafora.giovanni@gmail.com>, 2025\n"
 "Language-Team: Italian (https://app.transifex.com/openmediavault-plugin-developers/teams/1854/it/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -22,25 +23,25 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? 1 : 2;\n"
 
 msgid "Add new package"
-msgstr ""
+msgstr "Aggiungi nuovo pacchetto"
 
 msgid "Add to Packages tab"
-msgstr "Aggiungi alla scheda Pacchetti"
+msgstr "Aggiungi alla scheda pacchetti"
 
 msgid "Apt Tool"
-msgstr "Apt Tool"
+msgstr "Apt tool"
 
 msgid "Backports"
 msgstr "Backports"
 
 msgid "Description"
-msgstr ""
+msgstr "Descrizione"
 
 msgid "Hold"
-msgstr ""
+msgstr "Mantieni"
 
 msgid "Holding package"
-msgstr ""
+msgstr "Sto mantenendo il pacchetto"
 
 msgid "Install"
 msgstr "Installa"
@@ -49,25 +50,25 @@ msgid "Installed"
 msgstr "Installato"
 
 msgid "Installing package"
-msgstr ""
+msgstr "Sto installando il pacchetto"
 
 msgid "Name"
-msgstr ""
+msgstr "Nome"
 
 msgid "No"
 msgstr "No"
 
 msgid "None found."
-msgstr ""
+msgstr "Non trovato."
 
 msgid "OMV dependency"
-msgstr ""
+msgstr "Dipendenza di OMV"
 
 msgid "Package Name"
-msgstr "Nome Pacchetto"
+msgstr "Nome del pacchetto"
 
 msgid "Package name"
-msgstr ""
+msgstr "Nome del pacchetto"
 
 msgid "Packages"
 msgstr "Pacchetti"
@@ -76,31 +77,31 @@ msgid "Remove"
 msgstr "Rimuovi"
 
 msgid "Removing package"
-msgstr ""
+msgstr "Sto rimuovendo il pacchetto"
 
 msgid "Search"
 msgstr "Cerca"
 
 msgid "Status"
-msgstr ""
+msgstr "Stato"
 
 msgid "Tools"
 msgstr "Strumenti"
 
 msgid "Unhold"
-msgstr ""
+msgstr "Non mantenere"
 
 msgid "Unholding package ..."
-msgstr ""
+msgstr "Non sto mantenendo il pacchetto ..."
 
 msgid "Version"
-msgstr ""
+msgstr "Versione"
 
 msgid "Yes"
 msgstr "Sì"
 
 msgid "openmediavault dependencies cannot be removed!"
-msgstr ""
+msgstr "Le dipendenze di openmediavault non possono essere rimosse!"
 
 msgid "openmediavault packages cannot be added."
-msgstr ""
+msgstr "i pacchetti di openmediavault non possono essere aggiunti."

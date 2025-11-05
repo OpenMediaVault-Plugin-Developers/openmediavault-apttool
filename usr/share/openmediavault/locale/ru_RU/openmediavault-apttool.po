@@ -6,6 +6,7 @@
 # Translators:
 # Artur Mudrykh <arturmon82@gmail.com>, 2017
 # Дмитрий <bardimnik@rambler.ru>, 2023
+# Asdfgr Wertyu, 2024
 # 
 #, fuzzy
 msgid ""
@@ -14,7 +15,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-30 12:08-0500\n"
 "PO-Revision-Date: 2017-10-12 21:30+0000\n"
-"Last-Translator: Дмитрий <bardimnik@rambler.ru>, 2023\n"
+"Last-Translator: Asdfgr Wertyu, 2024\n"
 "Language-Team: Russian (https://app.transifex.com/openmediavault-plugin-developers/teams/1854/ru/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -35,7 +36,7 @@ msgid "Backports"
 msgstr "Бэкпорты"
 
 msgid "Description"
-msgstr ""
+msgstr "Описание"
 
 msgid "Hold"
 msgstr "Заморозить"
@@ -53,7 +54,7 @@ msgid "Installing package"
 msgstr "Установленные пакеты"
 
 msgid "Name"
-msgstr ""
+msgstr "Название"
 
 msgid "No"
 msgstr "Нет"
@@ -62,7 +63,7 @@ msgid "None found."
 msgstr "Ничего не найдено."
 
 msgid "OMV dependency"
-msgstr ""
+msgstr "Зависимость от OMV"
 
 msgid "Package Name"
 msgstr "Имя пакета"
@@ -83,7 +84,7 @@ msgid "Search"
 msgstr "Поиск"
 
 msgid "Status"
-msgstr ""
+msgstr "Статус"
 
 msgid "Tools"
 msgstr "Инструменты"
@@ -95,13 +96,13 @@ msgid "Unholding package ..."
 msgstr "Разморозка пакета ..."
 
 msgid "Version"
-msgstr ""
+msgstr "Версия"
 
 msgid "Yes"
 msgstr "Да"
 
 msgid "openmediavault dependencies cannot be removed!"
-msgstr ""
+msgstr "Зависимости openmediavault не могут быть удалены!"
 
 msgid "openmediavault packages cannot be added."
-msgstr ""
+msgstr "пакеты openmediavault не могут быть добавлены."

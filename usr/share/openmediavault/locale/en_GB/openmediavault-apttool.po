@@ -4,7 +4,7 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Andi Chandler <andi@gowling.com>, 2022
+# Andi Chandler <andi@gowling.com>, 2024
 # 
 #, fuzzy
 msgid ""
@@ -13,7 +13,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-30 12:08-0500\n"
 "PO-Revision-Date: 2017-10-12 21:30+0000\n"
-"Last-Translator: Andi Chandler <andi@gowling.com>, 2022\n"
+"Last-Translator: Andi Chandler <andi@gowling.com>, 2024\n"
 "Language-Team: English (United Kingdom) (https://app.transifex.com/openmediavault-plugin-developers/teams/1854/en_GB/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -34,7 +34,7 @@ msgid "Backports"
 msgstr "Backports"
 
 msgid "Description"
-msgstr ""
+msgstr "Description"
 
 msgid "Hold"
 msgstr "Hold"
@@ -52,7 +52,7 @@ msgid "Installing package"
 msgstr "Installing package"
 
 msgid "Name"
-msgstr ""
+msgstr "Name"
 
 msgid "No"
 msgstr "No"
@@ -61,7 +61,7 @@ msgid "None found."
 msgstr "None found."
 
 msgid "OMV dependency"
-msgstr ""
+msgstr "OMV dependency"
 
 msgid "Package Name"
 msgstr "Package Name"
@@ -82,7 +82,7 @@ msgid "Search"
 msgstr "Search"
 
 msgid "Status"
-msgstr ""
+msgstr "Status"
 
 msgid "Tools"
 msgstr "Tools"
@@ -94,13 +94,13 @@ msgid "Unholding package ..."
 msgstr "Unholding package ..."
 
 msgid "Version"
-msgstr ""
+msgstr "Version"
 
 msgid "Yes"
 msgstr "Yes"
 
 msgid "openmediavault dependencies cannot be removed!"
-msgstr ""
+msgstr "openmediavault dependencies cannot be removed!"
 
 msgid "openmediavault packages cannot be added."
-msgstr ""
+msgstr "openmediavault packages cannot be added."

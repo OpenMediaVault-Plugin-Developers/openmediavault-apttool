@@ -3,6 +3,9 @@
 # This file is distributed under the same license as the openmediavault-apttool package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
+# Translators:
+# Stephan Paternotte <stephan@paternottes.net>, 2025
+# 
 #, fuzzy
 msgid ""
 msgstr ""
@@ -10,6 +13,7 @@ msgstr ""
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-05-30 12:08-0500\n"
 "PO-Revision-Date: 2017-10-12 21:30+0000\n"
+"Last-Translator: Stephan Paternotte <stephan@paternottes.net>, 2025\n"
 "Language-Team: Dutch (https://app.transifex.com/openmediavault-plugin-developers/teams/1854/nl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -18,85 +22,85 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 msgid "Add new package"
-msgstr ""
+msgstr "Nieuw pakket toevoegen"
 
 msgid "Add to Packages tab"
-msgstr ""
+msgstr "Toevoegen aan tabblad Pakketten"
 
 msgid "Apt Tool"
-msgstr ""
+msgstr "Apt-tool"
 
 msgid "Backports"
-msgstr ""
+msgstr "Backports"
 
 msgid "Description"
-msgstr ""
+msgstr "Beschrijving"
 
 msgid "Hold"
-msgstr ""
+msgstr "Hold"
 
 msgid "Holding package"
-msgstr ""
+msgstr "Holding package"
 
 msgid "Install"
-msgstr ""
+msgstr "Installeren"
 
 msgid "Installed"
-msgstr ""
+msgstr "Geïnstalleerd"
 
 msgid "Installing package"
-msgstr ""
+msgstr "Pakket installeren"
 
 msgid "Name"
-msgstr ""
+msgstr "Naam"
 
 msgid "No"
-msgstr ""
+msgstr "Nee"
 
 msgid "None found."
-msgstr ""
+msgstr "Niets gevonden."
 
 msgid "OMV dependency"
-msgstr ""
+msgstr "OMV-afhankelijkheid"
 
 msgid "Package Name"
-msgstr ""
+msgstr "Pakketnaam"
 
 msgid "Package name"
-msgstr ""
+msgstr "Pakketnaam"
 
 msgid "Packages"
-msgstr ""
+msgstr "Pakketten"
 
 msgid "Remove"
-msgstr ""
+msgstr "Verwijderen"
 
 msgid "Removing package"
-msgstr ""
+msgstr "Pakket verwijderen"
 
 msgid "Search"
-msgstr ""
+msgstr "Zoeken"
 
 msgid "Status"
-msgstr ""
+msgstr "Status"
 
 msgid "Tools"
-msgstr ""
+msgstr "Hulpmiddelen"
 
 msgid "Unhold"
-msgstr ""
+msgstr "Unhold"
 
 msgid "Unholding package ..."
-msgstr ""
+msgstr "Unholding package…"
 
 msgid "Version"
-msgstr ""
+msgstr "Versie"
 
 msgid "Yes"
-msgstr ""
+msgstr "Ja"
 
 msgid "openmediavault dependencies cannot be removed!"
-msgstr ""
+msgstr "openmediavault-afhankelijkheden kunnen niet worden verwijderd!"
 
 msgid "openmediavault packages cannot be added."
-msgstr ""
+msgstr "openmediavault-pakketten kunnen niet worden toegevoegd."

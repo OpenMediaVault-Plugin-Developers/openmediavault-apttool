@@ -34,7 +34,7 @@ msgid "Backports"
 msgstr "Nem támogatott (Backports)"
 
 msgid "Description"
-msgstr ""
+msgstr "Leírás"
 
 msgid "Hold"
 msgstr "Visszatartás"
@@ -52,7 +52,7 @@ msgid "Installing package"
 msgstr "Csomag telepítése"
 
 msgid "Name"
-msgstr ""
+msgstr "Név"
 
 msgid "No"
 msgstr "Nem"
@@ -61,7 +61,7 @@ msgid "None found."
 msgstr "Nincs találat."
 
 msgid "OMV dependency"
-msgstr ""
+msgstr "OMV függőség"
 
 msgid "Package Name"
 msgstr "Csomagnév"
@@ -82,7 +82,7 @@ msgid "Search"
 msgstr "Keresés"
 
 msgid "Status"
-msgstr ""
+msgstr "ÁÁllapot"
 
 msgid "Tools"
 msgstr "Eszközök"
@@ -94,13 +94,13 @@ msgid "Unholding package ..."
 msgstr "Visszatartott csomag felszabadítása"
 
 msgid "Version"
-msgstr ""
+msgstr "Verzió"
 
 msgid "Yes"
 msgstr "Igen"
 
 msgid "openmediavault dependencies cannot be removed!"
-msgstr ""
+msgstr "Az openmediavault függőségek nem távolíthatóak el!"
 
 msgid "openmediavault packages cannot be added."
-msgstr ""
+msgstr "openmediavault csomagokat nem lehet hozzáadni."
