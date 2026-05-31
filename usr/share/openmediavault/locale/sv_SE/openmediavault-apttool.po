@@ -5,16 +5,16 @@
 # 
 # Translators:
 # efef6ec5b435a041fce803c7f8af77d2_2341d43, 2019
-# Daniel, 2023
+# Karl Jonatan Nyberg, 2023
 # 
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: openmediavault-apttool\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-05-30 12:08-0500\n"
+"POT-Creation-Date: 2026-05-31 00:54+0000\n"
 "PO-Revision-Date: 2017-10-12 21:30+0000\n"
-"Last-Translator: Daniel, 2023\n"
+"Last-Translator: Karl Jonatan Nyberg, 2023\n"
 "Language-Team: Swedish (https://app.transifex.com/openmediavault-plugin-developers/teams/1854/sv/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
